@@ -7,6 +7,7 @@
 #include <stdarg.h>
 #include <execinfo.h>
 #include <sched.h>
+#include <unistd.h>
 
 #include <base/stddef.h>
 #include <base/log.h>
@@ -26,14 +27,14 @@ void logk(int level, const char *fmt, ...)
 	off_t off;
 	int cpu;
 
-	if (level > max_loglevel)
-		return;
+	// if (level > max_loglevel)
+	// 	return;
 
 	cpu = sched_getcpu();
 
 	if (likely(base_init_done)) {
 		uint64_t us = microtime();
-		sprintf(buf, "[%3d.%06d] CPU %02d| <%d> ",
+		sprintf(buf, "proc:%d  [%3d.%06d] CPU %02d| <%d> ",getpid(),
 			(int)(us / ONE_SECOND), (int)(us % ONE_SECOND),
 			cpu, level);
 	} else {

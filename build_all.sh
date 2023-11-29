@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export NODE_TYPE=c6525
 function not_supported {
     echo 'Please set env var $NODE_TYPE, 
 supported list: [r650, r6525, c6525, d6515, xl170, xl170_uswitch, yinyang, zg]'

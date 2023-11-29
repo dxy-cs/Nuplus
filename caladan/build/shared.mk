@@ -44,7 +44,7 @@ ifeq ($(CONFIG_DEBUG),y)
 FLAGS += -DDEBUG -rdynamic -O0 -ggdb -mssse3
 LDFLAGS += -rdynamic
 else
-FLAGS += -DNDEBUG -O3
+FLAGS += -DNDEBUG
 endif
 ifeq ($(CONFIG_OPTIMIZE),y)
 FLAGS += -march=native -ffast-math

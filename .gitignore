@@ -6,3 +6,9 @@ glibc
 bin/*
 *~
 .conf_*
+*.rej
+# patch file
+/caladan/runtime/net/directpath/mlx5/mlx5_init.c
+caladan/iokernel/hw_timestamp.c
+caladan/runtime/net/directpath/mlx5/mlx5_init.c
+caladan/iokernel/dpdk.c

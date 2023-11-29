@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.ipp": "cpp",
+        "string": "cpp",
+        "tuple": "cpp",
+        "optional": "cpp"
+    }
+}

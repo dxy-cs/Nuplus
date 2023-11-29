@@ -37,15 +37,15 @@ function run_server {
 function run_test {
     BIN="$SHARED_SCRIPT_DIR/bin/$1"
 
-    run_controller 1>/dev/null 2>&1 &
+    run_controller &
     disown -r
     sleep 3
 
-    run_server $BIN 1>/dev/null 2>&1 &
+    run_server $BIN &
     disown -r
     sleep 3
 
-    run_main_server $BIN 2>/dev/null | grep -q "Passed"
+    run_main_server $BIN 
     ret=$?
 
     kill_process test_
