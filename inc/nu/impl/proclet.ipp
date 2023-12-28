@@ -286,6 +286,7 @@ template <typename T>
 template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
           typename... S0s, typename... S1s>
 RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
+  auto start_tsc = rdtsc();
   MigrationGuard caller_migration_guard;
 
   auto *caller_header = caller_migration_guard.header();
@@ -294,12 +295,14 @@ RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
     auto optional_callee_migration_guard =
         get_runtime()->reattach_and_disable_migration(callee_header,
                                                       caller_migration_guard);
+    auto end_tsc = rdtsc();
+    std::cout << "simple judge overhead:" << end_tsc-start_tsc << std::endl;
     if (optional_callee_migration_guard) {
       // Fast path: the callee proclet is actually local, use function call.
 
       constexpr auto kHasRetVal = !std::is_same_v<RetT, void>;
       std::conditional_t<kHasRetVal, RetT, ErasedType> ret;
-
+      // printf("local fastpath\n");
       {
         ProcletSlabGuard slab_guard(&callee_header->slab);
         using StatesTuple = std::tuple<std::decay_t<S1s>...>;
@@ -333,7 +336,7 @@ RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
       }
     }
   }
-
+  // printf("remote slowpath\n");
   // Slow path: the callee proclet is actually remote, use RPC.
   auto *handler = ProcletServer::run_closure<MigrEn, CPUMon, CPUSamp, T, RetT,
                                              decltype(fn), S1s...>;

@@ -31,7 +31,7 @@ extern "C" {
 
 namespace nu {
 
-constexpr static bool kEnableLogging = false;
+constexpr static bool kEnableLogging = true;
 constexpr static auto kMigrationDSCP = IPTOS_DSCP_CS0;
 
 MigratorConn::MigratorConn() : tcp_conn_(nullptr), ip_(0), manager_(nullptr) {}

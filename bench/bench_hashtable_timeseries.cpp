@@ -28,10 +28,10 @@ using namespace nu;
 constexpr uint32_t kKeyLen = 20;
 constexpr uint32_t kValLen = 2;
 constexpr double kLoadFactor = 0.20;
-constexpr uint32_t kNumThreads = 100;
-constexpr uint32_t kNumRecordsTotal = 100 << 20;
+constexpr uint32_t kNumThreads = 10;
+constexpr uint32_t kNumRecordsTotal = 100 << 18;
 constexpr uint32_t kNumRecordsPerCore = kNumRecordsTotal / kNumCores;
-constexpr double kTargetMOPS = 3;
+constexpr double kTargetMOPS = 1;
 constexpr bool kEnablePrinting = true;
 constexpr uint32_t kPrintIntervalUS = 200 * 1000;
 constexpr uint32_t kMigrationTriggeredUs = 10 * kPrintIntervalUS;
@@ -102,6 +102,7 @@ void random_str(auto &dist, auto &mt, uint32_t len, char *buf) {
 void init(Test::DSHashTable *hash_table, std::vector<Key> *keys) {
   std::vector<rt::Thread> threads;
   for (uint32_t i = 0; i < kNumThreads; i++) {
+    std::cout << "init thread " << i << std::endl;
     threads.emplace_back([&, tid = i] {
       std::random_device rd;
       std::mt19937 mt(rd());
@@ -155,6 +156,8 @@ void benchmark(Test::DSHashTable *hash_table, std::vector<Key> *keys,
           auto start_tsc = rdtsc();
           auto [v_optional, ip] = hash_table->get_with_ip(k);
           auto end_tsc = rdtsc();
+          printf("proclet addr:%d\n",ip);
+          //std::cout << "get overhead: " << end_tsc-start_tsc << std::endl;
 
           uint8_t server_id;
           if (ip == kIPServer0) {
@@ -165,38 +168,43 @@ void benchmark(Test::DSHashTable *hash_table, std::vector<Key> *keys,
             BUG();
           }
 
-          if constexpr (kEnablePrinting) {
-            auto duration_tsc = end_tsc - start_tsc;
-            trace_loggers[server_id]->add_trace(duration_tsc);
-          }
+          // if constexpr (kEnablePrinting) {
+          //   auto duration_tsc = end_tsc - start_tsc;
+          //   trace_loggers[server_id]->add_trace(duration_tsc);
+          // }
 
           int cpu_id = get_cpu();
           if (unlikely(records[server_id][cpu_id].size() ==
                        kNumRecordsPerCore)) {
+            std::cout << "thread finish " << tid << std::endl;
             client_cleanup();
             put_cpu();
             return;
           }
           records[server_id][cpu_id].push_back(
               std::make_pair(start_tsc, end_tsc - start_tsc));
+          //std::cout << "server" << server_id << "\t" << "cpu" <<cpu_id<<"\t"<<records[server_id][cpu_id].size() << "/" << kNumRecordsPerCore << std::endl;
           put_cpu();
         }
       }
     });
   }
 
-  if constexpr (kEnablePrinting) {
-    trace_loggers[0]->enable_print(kPrintIntervalUS);
-    timer_sleep(500 * 1000);  // Wait 0.5 seconds to avoid overlapped print.
-    trace_loggers[1]->enable_print(kPrintIntervalUS);
-  }
+  // if constexpr (kEnablePrinting) {
+  //   trace_loggers[0]->enable_print(kPrintIntervalUS);
+  //   timer_sleep(500 * 1000);  // Wait 0.5 seconds to avoid overlapped print.
+  //   trace_loggers[1]->enable_print(kPrintIntervalUS);
+  // }
   timer_sleep(kMigrationTriggeredUs);
-  test->run(&Test::migrate);
+  
+  std::cout << "original migration" << std::endl;
+  // test->run(&Test::migrate);
 
   for (auto &thread : threads) {
     thread.Join();
   }
 
+  std::cout << "start print! " << std::endl;
   for (uint8_t server_id = 0; server_id < 2; server_id++) {
     std::vector<std::pair<uint64_t, uint64_t>> all_records;
     for (uint32_t i = 0; i < kNumCores; i++) {

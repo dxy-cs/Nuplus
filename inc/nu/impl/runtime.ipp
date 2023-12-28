@@ -208,7 +208,8 @@ inline std::optional<MigrationGuard> Runtime::__reattach_and_disable_migration(
     new_header->rcu_lock.reader_lock(g);
     return MigrationGuard(new_header);
   }
-
+  // if header->status is not one of kPresent/kMigrating/kDestructing, 
+  // set thread back to old owner itself and return nullopt, which lead to go cold path using RPC.
   caladan_->thread_set_owner_proclet(caladan_->thread_self(), old_header,
                                      false);
   return std::nullopt;

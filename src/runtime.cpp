@@ -8,6 +8,7 @@
 #include <sys/mman.h>
 #include <unistd.h>
 #include <openssl/crypto.h>
+#include <iostream>
 
 extern "C" {
 #include <base/assert.h>
@@ -190,6 +191,7 @@ int runtime_main_init(int argc, char **argv,
     {
       auto main_proclet = make_proclet<ErasedType>(
           true, kMainProcletHeapSize, get_runtime()->caladan()->get_ip());
+      std::cout << "main_proclet_ip: " << get_runtime()->caladan()->get_ip() << std::endl;
       main_proclet.__run</* MigrEn = */ false, /* CPUMon = */ false>(
           +[](ErasedType &_, int *argc_p, char ***argv_p,
               std::function<void(int argc, char **argv)> *main_func_p) {

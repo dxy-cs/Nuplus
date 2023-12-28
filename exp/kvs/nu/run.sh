@@ -5,7 +5,7 @@ source ../../shared.sh
 CTL_IDX=1
 SRV_IDX=2
 CLT_START_IDX=3
-NUM_CLTS=2
+NUM_CLTS=1
 LPID=1
 KS=26
 
@@ -40,6 +40,7 @@ do
 	run_cmd $clt_idx "cd $DIR;
                           sed \"s/constexpr double kTargetMops =.*/constexpr double kTargetMops = $mop;/g\" -i client.cpp;
                           make clean; make -j"
+    echo "start KVS client in $clt_idx !!!!!!!!!!!!!!!!!!!!!!!!"
 	run_program client $clt_idx $DIR/conf/client$i 1>$DIR/logs/$mop.$i 2>&1 &
 	client_pids+=" $!"
     done

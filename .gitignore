@@ -7,8 +7,29 @@ bin/*
 *~
 .conf_*
 *.rej
+*.orig
+*.txt
+
 # patch file
-/caladan/runtime/net/directpath/mlx5/mlx5_init.c
 caladan/iokernel/hw_timestamp.c
 caladan/runtime/net/directpath/mlx5/mlx5_init.c
 caladan/iokernel/dpdk.c
+# test
+wyztest/helloworld/*
+# vscode extension
+.cache/clangd/index/*
+caladan/.cache/clangd/index/*
+caladan/bindings/cc/.cache/clangd/index/*
+# exp generate
+exp/compute_intensity/caladan_thrift/thrift/*
+exp/**/logs
+main
+server
+client
+caladan/pcm
+caladan/spdk
+caladan/rdma-core
+records_*
+core.*
+
+

@@ -20,7 +20,7 @@ using namespace apache::thrift::transport;
 
 constexpr uint32_t kPort = 10088;
 constexpr uint32_t kNumThreads = NCORES - 2;
-constexpr auto kIp =  "10.10.2.2";
+constexpr auto kIp =  "10.10.1.2";
 
 struct alignas(64) AlignedCnt {
   volatile uint32_t cnt;
