@@ -35,7 +35,8 @@ void do_work() {
   }
   for (uint32_t i = 0; i < kMaxNumProclets - 1; i++) {
     auto &obj = objs[i];
-    if (obj.run(&Obj::get) != i) {
+    auto retx = obj.run(&Obj::get);
+    if ( retx != i) {
       passed = false;
       break;
     }

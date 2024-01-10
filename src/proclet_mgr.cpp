@@ -13,6 +13,8 @@ extern "C" {
 #include "nu/runtime.hpp"
 #include "nu/proclet_mgr.hpp"
 
+#include <asm-generic/mman-common.h>
+
 namespace nu {
 
 uint8_t proclet_statuses[kMaxNumProclets];
@@ -26,7 +28,7 @@ ProcletManager::ProcletManager() {
     auto *proclet_base = reinterpret_cast<uint8_t *>(vaddr);
     auto mmap_addr =
         mmap(proclet_base, kMaxProcletHeapSize, PROT_READ | PROT_WRITE,
-             MAP_ANONYMOUS | MAP_PRIVATE | MAP_FIXED | MAP_NORESERVE, -1, 0);
+             MAP_ANONYMOUS | MAP_PRIVATE | MAP_FIXED_NOREPLACE | MAP_NORESERVE, -1, 0);
     BUG_ON(mmap_addr != proclet_base);
     auto rc = madvise(proclet_base, kMaxProcletHeapSize, MADV_DONTDUMP);
     BUG_ON(rc == -1);
@@ -67,6 +69,7 @@ void ProcletManager::depopulate(void *proclet_base, uint64_t size, bool defer) {
     auto mmap_addr =
         mmap(proclet_base, size, PROT_READ | PROT_WRITE,
              MAP_ANONYMOUS | MAP_PRIVATE | MAP_FIXED | MAP_NORESERVE, -1, 0);
+    printf("errno:%d:%s\n",errno, strerror(errno)); 
     BUG_ON(mmap_addr != proclet_base);
   }
 }

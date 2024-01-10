@@ -31,6 +31,8 @@ extern "C" {
 #include "nu/runtime.hpp"
 #include "nu/utils/slab.hpp"
 
+#include <asm-generic/mman-common.h>
+
 namespace nu {
 
 Runtime::Runtime() {}
@@ -65,7 +67,7 @@ void Runtime::init_runtime_heap() {
 
     auto mmap_addr =
         mmap(addr, kRuntimeHeapSize, PROT_READ | PROT_WRITE,
-             MAP_ANONYMOUS | MAP_SHARED | MAP_FIXED | MAP_NORESERVE, -1, 0);
+             MAP_ANONYMOUS | MAP_SHARED | MAP_FIXED_NOREPLACE | MAP_NORESERVE, -1, 0);
     BUG_ON(mmap_addr != addr);
     auto rc = madvise(addr, kRuntimeHeapSize, MADV_DONTDUMP);
     BUG_ON(rc == -1);
@@ -84,7 +86,11 @@ void Runtime::init_as_server(uint32_t remote_ctrl_ip, lpid_t lpid, bool isol) {
   controller_client_ =
       new ControllerClient(remote_ctrl_ip, kServer, lpid, isol);
   proclet_manager_ = new ProcletManager();
-  pressure_handler_ = new PressureHandler();
+  // modified
+  pressure_handler_ = reinterpret_cast<PressureHandler *>(new std::array<char, sizeof(PressureHandler)>);
+  new (pressure_handler_) PressureHandler();
+  // original 
+  // pressure_handler_ = new PressureHandler();
   resource_reporter_ = new ResourceReporter();
   stack_manager_ = new StackManager(controller_client_->get_stack_cluster());
   archive_pool_ = new ArchivePool<>();

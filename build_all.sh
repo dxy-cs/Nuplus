@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE_TYPE=c6525
+export NODE_TYPE=local
 function not_supported {
     echo 'Please set env var $NODE_TYPE, 
 supported list: [r650, r6525, c6525, d6515, xl170, xl170_uswitch, yinyang, zg]'
@@ -19,7 +19,7 @@ if [ ! -f $patch_file ]; then
     not_supported
 fi
 
-patch -p1 -d caladan/ < $patch_file
+# patch -p1 -d caladan/ < $patch_file
 
 # Build caladan.
 cd caladan
@@ -28,7 +28,7 @@ cd ..
 
 # Build Nu.
 make clean
-make -j`nproc`
+bear make -j`nproc`
 
 # Setup Nu.
 ./setup.sh

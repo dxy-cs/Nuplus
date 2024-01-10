@@ -6,6 +6,8 @@
 #include "nu/runtime.hpp"
 #include "nu/rpc_client_mgr.hpp"
 
+#include <asm-generic/mman-common.h>
+
 namespace nu {
 
 void mmap_all_stack_space() {
@@ -15,7 +17,8 @@ void mmap_all_stack_space() {
     auto *mmap_ptr = reinterpret_cast<uint8_t *>(vaddr);
     auto mmap_addr =
         mmap(mmap_ptr, kStackClusterSize, PROT_READ | PROT_WRITE,
-             MAP_ANONYMOUS | MAP_PRIVATE | MAP_FIXED | MAP_NORESERVE, -1, 0);
+             MAP_ANONYMOUS | MAP_PRIVATE | MAP_FIXED_NOREPLACE | MAP_NORESERVE,
+             -1, 0);
     BUG_ON(mmap_addr != mmap_ptr);
     auto rc = madvise(mmap_ptr, kStackClusterSize, MADV_DONTDUMP);
     BUG_ON(rc == -1);
