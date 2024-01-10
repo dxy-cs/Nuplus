@@ -63,7 +63,7 @@ public:
     uint64_t old_sum = 0;
     uint64_t old_us = microtime();
     while (true) {
-      timer_sleep(kPrintIntervalUS);
+      timer_sleep(kPrintInt ervalUS);
       auto us = microtime();
       uint64_t sum = 0;
       for (uint32_t i = 0; i < kNumThreads; i++) {

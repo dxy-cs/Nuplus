@@ -14,12 +14,16 @@
         "cstddef": "cpp",
         "cstdio": "cpp",
         "cstdlib": "cpp",
+<<<<<<< HEAD
         "cstring": "cpp",
         "ctime": "cpp",
+=======
+>>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
         "cwchar": "cpp",
         "cwctype": "cpp",
         "array": "cpp",
         "atomic": "cpp",
+<<<<<<< HEAD
         "strstream": "cpp",
         "bit": "cpp",
         "*.tcc": "cpp",
@@ -36,6 +40,14 @@
         "set": "cpp",
         "unordered_map": "cpp",
         "unordered_set": "cpp",
+=======
+        "bit": "cpp",
+        "*.tcc": "cpp",
+        "compare": "cpp",
+        "concepts": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+>>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
         "vector": "cpp",
         "exception": "cpp",
         "algorithm": "cpp",
@@ -43,6 +55,7 @@
         "iterator": "cpp",
         "memory": "cpp",
         "memory_resource": "cpp",
+<<<<<<< HEAD
         "netfwd": "cpp",
         "numeric": "cpp",
         "random": "cpp",
@@ -78,4 +91,48 @@
         "bitset": "cpp"
     },
     "C_Cpp.default.compilerPath": "/usr/bin/g++"
+=======
+        "numeric": "cpp",
+        "system_error": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "numbers": "cpp",
+        "ostream": "cpp",
+        "ranges": "cpp",
+        "span": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "cinttypes": "cpp",
+        "typeinfo": "cpp",
+        "variant": "cpp",
+        "list": "cpp",
+        "set": "cpp",
+        "iostream": "cpp",
+        "condition_variable": "cpp",
+        "cstring": "cpp",
+        "map": "cpp",
+        "unordered_set": "cpp",
+        "scope": "cpp",
+        "mutex": "cpp",
+        "ratio": "cpp",
+        "spanstream": "cpp",
+        "thread": "cpp",
+        "typeindex": "cpp",
+        "ctime": "cpp",
+        "semaphore": "cpp",
+        "stop_token": "cpp",
+        "fstream": "cpp"
+    }
+    // "clangd.arguments": [
+    //     "--log=verbose",
+    //     "--header-insertion=never",
+    //     "--query-driver=/usr/bin/g++*"
+    //     ]
+>>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
 }

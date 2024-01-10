@@ -30,4 +30,10 @@ caladan/pcm
 caladan/spdk
 caladan/rdma-core
 records_*
+<<<<<<< HEAD
 core.*
+=======
+core.*
+
+
+>>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8

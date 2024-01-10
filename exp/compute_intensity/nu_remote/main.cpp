@@ -16,7 +16,7 @@ extern "C" {
 
 using namespace nu;
 
-constexpr uint32_t kDelayNs = 10000;
+constexpr uint32_t kDelayNs = 2000;
 constexpr uint32_t kNumThreads = 2000;
 constexpr uint32_t kPrintIntervalUS = 1000 * 1000;
 constexpr uint32_t kNumItersPerYield = 1000 * 1000 / kDelayNs;

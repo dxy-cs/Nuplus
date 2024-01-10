@@ -8,7 +8,7 @@
             "name": "(gdb) 附加",
             "type": "cppdbg",
             "request": "attach",
-            "program": "${workspaceFolder}/ctrl_main",
+            "program": "${workspaceFolder}/exp/migration_time/main",
             "MIMode": "gdb",
             "setupCommands": [
                 {

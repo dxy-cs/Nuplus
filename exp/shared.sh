@@ -17,6 +17,7 @@ function ssh_ip() {
     echo $ssh_ip_prefix$srv_idx
 }
 
+# +1 compared to ssh_ip
 function caladan_srv_ip() {
     srv_idx=$1
     echo "18.18.1."$(($srv_idx+1))
