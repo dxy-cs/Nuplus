@@ -10,10 +10,6 @@ pushd ksched
 make clean &&  make -j`nproc`
 popd
 pushd bindings/cc/
-<<<<<<< HEAD
 bear make -j`nproc`
-=======
- make -j`nproc`
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
 popd
 sudo ./scripts/setup_machine.sh

@@ -24,7 +24,7 @@ constexpr uint32_t kKeyLen = 20;
 constexpr uint32_t kValLen = 2;
 constexpr double kLoadFactor = 0.30;
 constexpr uint32_t kPrintIntervalUS = 1000 * 1000;
-constexpr uint32_t kNumProxies = 1;
+constexpr uint32_t kNumProxies = 8;
 constexpr uint32_t kProxyPort = 10086;
 constexpr uint32_t kNumThreads = 500;
 

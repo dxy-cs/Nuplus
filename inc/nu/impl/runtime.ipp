@@ -1,6 +1,10 @@
 #include <experimental/scope>
 #include <type_traits>
 #include <utility>
+/*dxy++*/
+#include <x86intrin.h>
+#include <atomic>
+#include <chrono>
 
 extern "C" {
 #include <base/assert.h>
@@ -13,6 +17,22 @@ extern "C" {
 #include "nu/commons.hpp"
 #include "nu/proclet_mgr.hpp"
 #include "nu/stack_manager.hpp"
+
+/*dxy++*/
+inline uint64_t rdtsc1() {
+  unsigned int _;
+  return __rdtscp(&_);
+}
+
+inline uint64_t microtime1() {
+  return std::chrono::duration_cast<std::chrono::microseconds>(
+             std::chrono::system_clock::now().time_since_epoch())
+      .count();
+}
+
+static std::atomic_uint64_t nu_actual_exec_time = 0;
+static std::atomic_uint64_t nu_commu_time = 0;
+
 
 namespace nu {
 
@@ -280,8 +300,9 @@ inline MigrationGuard::~MigrationGuard() {
 
 inline ProcletHeader *MigrationGuard::header() const { return header_; }
 
+/*dxy++*/
 template <typename F>
-inline auto MigrationGuard::enable_for(F &&f) {
+inline auto MigrationGuard::enable_for_profile(F &&f) {
   using RetT = decltype(f());
 
   auto cleaner = std::experimental::scope_exit([&] {
@@ -295,12 +316,69 @@ inline auto MigrationGuard::enable_for(F &&f) {
   });
 
   header_->rcu_lock.reader_unlock();
+  uint64_t s61 = rdtsc1();
+  if constexpr (std::is_same_v<RetT, void>) {
+    f();
+    uint64_t e61 = rdtsc1();
+    nu_actual_exec_time += (e61 - s61);
+  } else {
+    auto res = f();
+    uint64_t e61 = rdtsc1();
+    nu_actual_exec_time += (e61 - s61);
+    return res;
+  }
+}
+
+
+template <typename F>
+inline auto MigrationGuard::enable_for(F &&f) {
+  uint64_t s1, e1;
+  s1 = microtime1();
+  using RetT = decltype(f());
+
+  auto cleaner = std::experimental::scope_exit([&] {
+    retry:
+      auto nesting_cnt = header_->rcu_lock.reader_lock();
+      if (unlikely(header_->status() < kPresent && nesting_cnt == 1)) {
+        header_->rcu_lock.reader_unlock();
+        ProcletManager::wait_until(header_, kPresent);
+        goto retry;
+      }
+  });
+
+  header_->rcu_lock.reader_unlock();
+  e1 = microtime1();
+  nu_commu_time += (e1 - s1);
   if constexpr (std::is_same_v<RetT, void>) {
     f();
   } else {
     return f();
   }
 }
+
+
+/* dxy: original version. */
+//template <typename F>
+//inline auto MigrationGuard::enable_for(F &&f) {
+//  using RetT = decltype(f());
+//
+//  auto cleaner = std::experimental::scope_exit([&] {
+//    retry:
+//      auto nesting_cnt = header_->rcu_lock.reader_lock();
+//      if (unlikely(header_->status() < kPresent && nesting_cnt == 1)) {
+//        header_->rcu_lock.reader_unlock();
+//        ProcletManager::wait_until(header_, kPresent);
+//        goto retry;
+//      }
+//  });
+//
+//  header_->rcu_lock.reader_unlock();
+//  if constexpr (std::is_same_v<RetT, void>) {
+//    f();
+//  } else {
+//    return f();
+//  }
+//}
 
 inline void MigrationGuard::reset() {
   if (header_) {

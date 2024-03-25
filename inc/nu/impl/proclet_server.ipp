@@ -6,12 +6,27 @@
 
 #include <net.h>
 
+/*dxy++*/
+#include <x86intrin.h>
+#include <atomic>
+
 #include "nu/ctrl.hpp"
 #include "nu/ctrl_client.hpp"
 #include "nu/migrator.hpp"
 #include "nu/runtime.hpp"
 #include "nu/proclet_mgr.hpp"
 #include "nu/type_traits.hpp"
+
+/*dxy++*/
+//inline uint64_t rdtsc1() {
+//  unsigned int _;
+//  return __rdtscp(&_);
+//}
+static std::atomic_uint64_t nu_set_monitor_time = 0;
+static std::atomic_uint64_t nu_exec_time = 0;
+static std::atomic_uint64_t nu_end_monitor_time = 0;
+static std::atomic_uint64_t nu_return_val_to_caller_time = 0;
+//extern std::atomic_uint64_t nu_commu_time;
 
 namespace nu {
 
@@ -311,13 +326,15 @@ void ProcletServer::run_closure(ArchivePool<>::IASStream *ia_sstream,
   }
 }
 
+/*dxy++*/
 template <bool MigrEn, bool CPUMon, bool CPUSamp, typename Cls, typename RetT,
           typename FnPtr, typename... Ss>
-void ProcletServer::run_closure_locally(
+void ProcletServer::run_closure_locally_with_profile(
     MigrationGuard *callee_migration_guard,
     const ProcletSlabGuard &callee_slab_guard, RetT *caller_ptr,
     ProcletHeader *caller_header, ProcletHeader *callee_header, FnPtr fn_ptr,
     std::tuple<Ss...> *states) {
+  uint64_t s5 = rdtsc1();
   if constexpr (CPUMon) {
     if constexpr (CPUSamp) {
       callee_header->cpu_load.start_monitor();
@@ -326,7 +343,10 @@ void ProcletServer::run_closure_locally(
     }
   }
   callee_header->thread_cnt.inc_unsafe();
+  uint64_t e5 = rdtsc1();
+  nu_set_monitor_time += (e5 - s5);
 
+  uint64_t s6 = rdtsc1(), e6;
   auto *obj = get_runtime()->get_root_obj<Cls>(to_proclet_id(callee_header));
 
   if constexpr (!std::is_same<RetT, void>::value) {
@@ -334,7 +354,7 @@ void ProcletServer::run_closure_locally(
     std::apply(
         [&](auto &&...states) {
           if constexpr (MigrEn) {
-            callee_migration_guard->enable_for(
+            callee_migration_guard->enable_for_profile(
                 [&] { new (ret) RetT(fn_ptr(*obj, std::move(states)...)); });
           } else {
             new (ret) RetT(fn_ptr(*obj, std::move(states)...));
@@ -342,11 +362,18 @@ void ProcletServer::run_closure_locally(
         },
         std::move(*states));
     std::destroy_at(states);
+    e6 = rdtsc1();
+    nu_exec_time += (e6 - s6);
+    
+    uint64_t s7 = rdtsc1();
     callee_header->thread_cnt.dec_unsafe();
     if constexpr (CPUMon) {
       callee_header->cpu_load.end_monitor();
     }
+    uint64_t e7 = rdtsc1();
+    nu_end_monitor_time += (e7 - s7);
 
+    uint64_t s8 = rdtsc1(), e8;
     auto optional_caller_guard = get_runtime()->reattach_and_disable_migration(
         caller_header, *callee_migration_guard);
     if (likely(optional_caller_guard)) {
@@ -354,9 +381,12 @@ void ProcletServer::run_closure_locally(
       *caller_ptr = pass_across_proclet(std::move(*ret));
       std::destroy_at(ret);
       callee_migration_guard->reset();
+      e8 = rdtsc1();
+      nu_return_val_to_caller_time += (e8 - s8);
       return;
     }
 
+    std::cout << "UNEXPECTED!!! Caller is not local when returning!!!" << std::endl;
     RuntimeSlabGuard slab_guard;
 
     auto *oa_sstream = get_runtime()->archive_pool()->get_oa_sstream();
@@ -373,8 +403,11 @@ void ProcletServer::run_closure_locally(
     Migrator::migrate_thread_and_ret_val<RetT>(
         std::move(ret_val_buf), to_proclet_id(caller_header), caller_ptr,
         [&] { get_runtime()->archive_pool()->put_oa_sstream(oa_sstream); });
+    e8 = rdtsc1();
+    nu_return_val_to_caller_time += (e8 - s8);
     return;
   } else {
+    std::cout << "UNEXPECTED!!! Ret = void!!!" << std::endl;
     callee_migration_guard->reset();
     std::apply([&](auto &&... states) { fn_ptr(*obj, std::move(states)...); },
                std::move(*states));
@@ -401,5 +434,216 @@ void ProcletServer::run_closure_locally(
     return;
   }
 }
+
+
+/*dxy: add for kmeans/nu_multi and socialNetwork/nu_multi, 
+      used to testing communication ratio. */
+template <bool MigrEn, bool CPUMon, bool CPUSamp, typename Cls, typename RetT,
+          typename FnPtr, typename... Ss>
+void ProcletServer::run_closure_locally(
+    MigrationGuard *callee_migration_guard,
+    const ProcletSlabGuard &callee_slab_guard, RetT *caller_ptr,
+    ProcletHeader *caller_header, ProcletHeader *callee_header, FnPtr fn_ptr,
+    std::tuple<Ss...> *states) {
+  uint64_t s1, e1;
+  s1 = microtime1();
+  if constexpr (CPUMon) {
+    if constexpr (CPUSamp) {
+      callee_header->cpu_load.start_monitor();
+    } else {
+      callee_header->cpu_load.start_monitor_no_sampling();
+    }
+  }
+  callee_header->thread_cnt.inc_unsafe();
+  e1 = microtime1();
+  nu_commu_time += (e1 - s1);
+
+  auto *obj = get_runtime()->get_root_obj<Cls>(to_proclet_id(callee_header));
+
+  if constexpr (!std::is_same<RetT, void>::value) {
+    auto *ret = reinterpret_cast<RetT *>(alloca(sizeof(RetT)));
+    std::apply(
+        [&](auto &&...states) {
+          if constexpr (MigrEn) {
+            callee_migration_guard->enable_for(
+                [&] { new (ret) RetT(fn_ptr(*obj, std::move(states)...)); });
+          } else {
+            new (ret) RetT(fn_ptr(*obj, std::move(states)...));
+          }
+        },
+        std::move(*states));
+    s1 = microtime1();
+    std::destroy_at(states);
+    callee_header->thread_cnt.dec_unsafe();
+    if constexpr (CPUMon) {
+      callee_header->cpu_load.end_monitor();
+    }
+
+    auto optional_caller_guard = get_runtime()->reattach_and_disable_migration(
+        caller_header, *callee_migration_guard);
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);
+    if (likely(optional_caller_guard)) {
+      s1 = microtime1();
+      ProcletSlabGuard slab_guard(&caller_header->slab);
+      *caller_ptr = pass_across_proclet(std::move(*ret));
+      std::destroy_at(ret);
+      callee_migration_guard->reset();
+      e1 = microtime1();
+      nu_commu_time += (e1 - s1);
+      return;
+    }
+
+    s1 = microtime1();
+    RuntimeSlabGuard slab_guard;
+
+    auto *oa_sstream = get_runtime()->archive_pool()->get_oa_sstream();
+    oa_sstream->oa << std::move(*ret);
+    auto ss_view = oa_sstream->ss.view();
+    auto ret_val_span = std::span<const std::byte>(
+        reinterpret_cast<const std::byte *>(ss_view.data()),
+        oa_sstream->ss.tellp());
+    RPCReturnBuffer ret_val_buf(ret_val_span);
+
+    std::destroy_at(ret);
+    get_runtime()->detach();
+    callee_migration_guard->reset();
+    Migrator::migrate_thread_and_ret_val<RetT>(
+        std::move(ret_val_buf), to_proclet_id(caller_header), caller_ptr,
+        [&] { get_runtime()->archive_pool()->put_oa_sstream(oa_sstream); });
+    
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);
+    return;
+  } else {
+    s1 = microtime1();
+    callee_migration_guard->reset();
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);
+    std::apply([&](auto &&... states) { fn_ptr(*obj, std::move(states)...); },
+               std::move(*states));
+    s1 = microtime1();
+    std::destroy_at(states);
+    callee_header->thread_cnt.dec_unsafe();
+    if constexpr (CPUMon) {
+      callee_header->cpu_load.end_monitor();
+    }
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);
+
+    auto attached = get_runtime()->attach(caller_header);
+    if (likely(attached)) {
+      return;
+    }
+
+    s1 = microtime1();
+    RuntimeSlabGuard slab_guard;
+    RPCReturnBuffer ret_val_buf;
+
+    {
+      nu::Caladan::PreemptGuard g;
+      get_runtime()->detach();
+    }
+    Migrator::migrate_thread_and_ret_val<void>(
+        std::move(ret_val_buf), to_proclet_id(caller_header), nullptr, nullptr);
+    
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);
+    return;
+  }
+}
+
+
+/* dxy: Original version */
+//template <bool MigrEn, bool CPUMon, bool CPUSamp, typename Cls, typename RetT,
+//          typename FnPtr, typename... Ss>
+//void ProcletServer::run_closure_locally(
+//    MigrationGuard *callee_migration_guard,
+//    const ProcletSlabGuard &callee_slab_guard, RetT *caller_ptr,
+//    ProcletHeader *caller_header, ProcletHeader *callee_header, FnPtr fn_ptr,
+//    std::tuple<Ss...> *states) {
+//  if constexpr (CPUMon) {
+//    if constexpr (CPUSamp) {
+//      callee_header->cpu_load.start_monitor();
+//    } else {
+//      callee_header->cpu_load.start_monitor_no_sampling();
+//    }
+//  }
+//  callee_header->thread_cnt.inc_unsafe();
+//
+//  auto *obj = get_runtime()->get_root_obj<Cls>(to_proclet_id(callee_header));
+//
+//  if constexpr (!std::is_same<RetT, void>::value) {
+//    auto *ret = reinterpret_cast<RetT *>(alloca(sizeof(RetT)));
+//    std::apply(
+//        [&](auto &&...states) {
+//          if constexpr (MigrEn) {
+//            callee_migration_guard->enable_for(
+//                [&] { new (ret) RetT(fn_ptr(*obj, std::move(states)...)); });
+//          } else {
+//            new (ret) RetT(fn_ptr(*obj, std::move(states)...));
+//          }
+//        },
+//        std::move(*states));
+//    std::destroy_at(states);
+//    callee_header->thread_cnt.dec_unsafe();
+//    if constexpr (CPUMon) {
+//      callee_header->cpu_load.end_monitor();
+//    }
+//
+//    auto optional_caller_guard = get_runtime()->reattach_and_disable_migration(
+//        caller_header, *callee_migration_guard);
+//    if (likely(optional_caller_guard)) {
+//      ProcletSlabGuard slab_guard(&caller_header->slab);
+//      *caller_ptr = pass_across_proclet(std::move(*ret));
+//      std::destroy_at(ret);
+//      callee_migration_guard->reset();
+//      return;
+//    }
+//
+//    RuntimeSlabGuard slab_guard;
+//
+//    auto *oa_sstream = get_runtime()->archive_pool()->get_oa_sstream();
+//    oa_sstream->oa << std::move(*ret);
+//    auto ss_view = oa_sstream->ss.view();
+//    auto ret_val_span = std::span<const std::byte>(
+//        reinterpret_cast<const std::byte *>(ss_view.data()),
+//        oa_sstream->ss.tellp());
+//    RPCReturnBuffer ret_val_buf(ret_val_span);
+//
+//    std::destroy_at(ret);
+//    get_runtime()->detach();
+//    callee_migration_guard->reset();
+//    Migrator::migrate_thread_and_ret_val<RetT>(
+//        std::move(ret_val_buf), to_proclet_id(caller_header), caller_ptr,
+//        [&] { get_runtime()->archive_pool()->put_oa_sstream(oa_sstream); });
+//    return;
+//  } else {
+//    callee_migration_guard->reset();
+//    std::apply([&](auto &&... states) { fn_ptr(*obj, std::move(states)...); },
+//               std::move(*states));
+//    std::destroy_at(states);
+//    callee_header->thread_cnt.dec_unsafe();
+//    if constexpr (CPUMon) {
+//      callee_header->cpu_load.end_monitor();
+//    }
+//
+//    auto attached = get_runtime()->attach(caller_header);
+//    if (likely(attached)) {
+//      return;
+//    }
+//
+//    RuntimeSlabGuard slab_guard;
+//    RPCReturnBuffer ret_val_buf;
+//
+//    {
+//      nu::Caladan::PreemptGuard g;
+//      get_runtime()->detach();
+//    }
+//    Migrator::migrate_thread_and_ret_val<void>(
+//        std::move(ret_val_buf), to_proclet_id(caller_header), nullptr, nullptr);
+//    return;
+//  }
+//}
 
 }  // namespace nu

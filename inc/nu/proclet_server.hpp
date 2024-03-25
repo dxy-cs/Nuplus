@@ -41,6 +41,15 @@ class ProcletServer {
             typename FnPtr, typename... S1s>
   static void run_closure(ArchivePool<>::IASStream *ia_sstream,
                           RPCReturner *returner);
+  /*dxy++*/
+  template <bool MigrEn, bool CPUMon, bool CPUSamp, typename Cls, typename RetT,
+            typename FnPtr, typename... Ss>
+  static void run_closure_locally_with_profile(MigrationGuard *callee_migration_guard,
+                                  const ProcletSlabGuard &callee_slab_guard,
+                                  RetT *caller_ptr,
+                                  ProcletHeader *caller_header,
+                                  ProcletHeader *callee_header, FnPtr fn_ptr,
+                                  std::tuple<Ss...> *states);
   template <bool MigrEn, bool CPUMon, bool CPUSamp, typename Cls, typename RetT,
             typename FnPtr, typename... Ss>
   static void run_closure_locally(MigrationGuard *callee_migration_guard,

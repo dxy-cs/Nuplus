@@ -3,3318 +3,1483 @@
         "arguments": [
             "cc",
             "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/ioqueues.o",
-            "runtime/ioqueues.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/ioqueues.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/page.o",
-            "base/page.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/page.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/tcp_in.o",
-            "runtime/net/tcp_in.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/tcp_in.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/slab.o",
-            "base/slab.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/slab.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/stat.o",
-            "base/stat.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/stat.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/timer.o",
-            "runtime/timer.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/timer.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/simple.o",
-            "iokernel/simple.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/simple.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_ping.o",
-            "tests/test_ping.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_ping.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/ias_ht.o",
-            "iokernel/ias_ht.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias_ht.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/netlink.o",
-            "iokernel/netlink.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/netlink.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/report.o",
-            "runtime/report.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/report.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/ias.o",
-            "iokernel/ias.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/stack.o",
-            "runtime/stack.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/stack.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/jenkins_hash.o",
-            "base/jenkins_hash.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/jenkins_hash.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/tcache.o",
-            "base/tcache.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/tcache.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/time.o",
-            "base/time.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/time.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/commands.o",
-            "iokernel/commands.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/commands.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/transport.o",
-            "runtime/net/transport.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/transport.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_multiple_runtimes.o",
-            "tests/test_multiple_runtimes.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_multiple_runtimes.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/ias_ht.o",
-            "iokernel/ias_ht.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias_ht.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/cfg.o",
-            "runtime/cfg.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/cfg.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/arp.o",
-            "runtime/net/arp.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/arp.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/hw_timestamp.o",
-            "iokernel/hw_timestamp.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/hw_timestamp.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/thread.o",
-            "base/thread.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/thread.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/tcp_debug.o",
-            "runtime/net/tcp_debug.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/tcp_debug.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/ias_ts.o",
-            "iokernel/ias_ts.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias_ts.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_storage.o",
-            "tests/test_storage.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_storage.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/bitmap.o",
-            "base/bitmap.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/bitmap.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/sched.o",
-            "runtime/sched.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/sched.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/sysfs.o",
-            "base/sysfs.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/sysfs.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_base_thread.o",
-            "tests/test_base_thread.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_base_thread.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/smalloc.o",
-            "runtime/smalloc.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/smalloc.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/mlx5/mlx5_flow_steering.o",
-            "runtime/net/directpath/mlx5/mlx5_flow_steering.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_flow_steering.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/mempool.o",
-            "base/mempool.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/mempool.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/mempool.o",
-            "base/mempool.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/mempool.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/preempt.o",
-            "runtime/preempt.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/preempt.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/gc.o",
-            "runtime/gc.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/gc.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/init.o",
-            "base/init.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/init.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/page.o",
-            "base/page.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/page.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/directpath/mlx5/mlx5_flow.o",
-            "runtime/net/directpath/mlx5/mlx5_flow.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_flow.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_kthread_attach.o",
-            "tests/test_kthread_attach.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_kthread_attach.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_runtime_timer.o",
-            "tests/test_runtime_timer.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_runtime_timer.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/poll.o",
-            "runtime/poll.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/poll.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/sched.o",
-            "runtime/sched.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/sched.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/membarrier.o",
-            "runtime/membarrier.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/membarrier.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/tcp.o",
-            "runtime/net/tcp.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/tcp.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_runtime_smalloc.o",
-            "tests/test_runtime_smalloc.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_runtime_smalloc.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/stat.o",
-            "base/stat.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/stat.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_base_gen.o",
-            "tests/test_base_gen.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_base_gen.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/core.o",
-            "runtime/net/core.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/core.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_ping.o",
-            "tests/test_ping.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_ping.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/simple.o",
-            "iokernel/simple.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/simple.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/udp.o",
-            "runtime/net/udp.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/udp.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/tcp_in.o",
-            "runtime/net/tcp_in.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/tcp_in.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/main.o",
-            "iokernel/main.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/main.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/ping.o",
-            "runtime/net/ping.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/ping.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/mlx5/mlx5_queue_steering.o",
-            "runtime/net/directpath/mlx5/mlx5_queue_steering.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_queue_steering.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_kthread_wakeup.o",
-            "tests/test_kthread_wakeup.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_kthread_wakeup.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_storage_iops.o",
-            "tests/test_storage_iops.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_storage_iops.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/memcpy.o",
-            "runtime/memcpy.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/memcpy.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/tcp.o",
-            "runtime/net/tcp.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/tcp.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/udp.o",
-            "runtime/net/udp.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/udp.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/time.o",
-            "base/time.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/time.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/switch.o",
-            "runtime/switch.S"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/switch.S"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/ias_ts.o",
-            "iokernel/ias_ts.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias_ts.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/numa.o",
-            "iokernel/numa.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/numa.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/dpdk.o",
-            "iokernel/dpdk.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/dpdk.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "net/mbuf.o",
-            "net/mbuf.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "net/mbuf.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/ias_ps.o",
-            "iokernel/ias_ps.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias_ps.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/commands.o",
-            "iokernel/commands.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/commands.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/cpu.o",
-            "base/cpu.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/cpu.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_runtime_threads.o",
-            "tests/test_runtime_threads.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_runtime_threads.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/kthread.o",
-            "runtime/kthread.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/kthread.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/hw_timestamp.o",
-            "iokernel/hw_timestamp.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/hw_timestamp.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/timer.o",
-            "runtime/timer.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/timer.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/tcp_debug.o",
-            "runtime/net/tcp_debug.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/tcp_debug.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/mlx5/mlx5_flow.o",
-            "runtime/net/directpath/mlx5/mlx5_flow.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_flow.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/mempool_completion.o",
-            "iokernel/mempool_completion.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/mempool_completion.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/mlx5/mlx5_rxtx.o",
-            "runtime/net/directpath/mlx5/mlx5_rxtx.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_rxtx.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_storage.o",
-            "tests/test_storage.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_storage.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/mempool_completion.o",
-            "iokernel/mempool_completion.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/mempool_completion.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_storage_iops.o",
-            "tests/test_storage_iops.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_storage_iops.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "net/netdump.o",
-            "net/netdump.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "net/netdump.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/ias_bw.o",
-            "iokernel/ias_bw.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias_bw.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/mem.o",
-            "base/mem.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/mem.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/log.o",
-            "base/log.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/log.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/switch.o",
-            "runtime/switch.S"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/switch.S"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "base/cpu.o",
-            "base/cpu.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/cpu.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "iokernel/tx.o",
-            "iokernel/tx.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/tx.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "iokernel/rx.o",
-            "iokernel/rx.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/rx.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/thread.o",
-            "base/thread.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/thread.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/netperf.o",
-            "tests/netperf.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/netperf.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/list.o",
-            "base/list.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/list.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/directpath/mlx5/mlx5_rxtx.o",
-            "runtime/net/directpath/mlx5/mlx5_rxtx.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_rxtx.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "tests/test_runtime_timer.o",
-            "tests/test_runtime_timer.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_runtime_timer.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/net/directpath/mlx5/mlx5_queue_steering.o",
-            "runtime/net/directpath/mlx5/mlx5_queue_steering.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_queue_steering.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "base/pci.o",
-            "base/pci.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/pci.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/poll.o",
-            "runtime/poll.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/poll.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/stat.o",
-            "runtime/stat.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/stat.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "tests/test_base_gen.o",
-            "tests/test_base_gen.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_base_gen.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-            "-o",
-<<<<<<< HEAD
-            "runtime/pressure.o",
-            "runtime/pressure.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/pressure.c"
-    },
-    {
-        "arguments": [
-            "cc",
-=======
-            "runtime/gc.o",
-            "runtime/gc.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/gc.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/common.o",
-            "runtime/net/directpath/common.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/cq.c.o",
+            "../providers/mlx5/cq.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/common.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/cq.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/tx.o",
-            "iokernel/tx.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/tx.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "base/slab.o",
-            "base/slab.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/mlx5.c.o",
+            "../providers/mlx5/mlx5.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/slab.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/mlx5.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/dpdk.o",
-            "iokernel/dpdk.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/dpdk.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "base/sysfs.o",
-            "base/sysfs.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_ste.c.o",
+            "../providers/mlx5/dr_ste.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/sysfs.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "base/pci.o",
-            "base/pci.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/pci.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/storage.o",
-            "runtime/storage.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_action.c.o",
+            "../providers/mlx5/dr_action.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/storage.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_action.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/report.o",
-            "runtime/report.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/report.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "tests/test_base_hello.o",
-            "tests/test_base_hello.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/verbs.c.o",
+            "../providers/mlx5/verbs.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_base_hello.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/verbs.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/net/directpath/mlx5/mlx5_flow_steering.o",
-            "runtime/net/directpath/mlx5/mlx5_flow_steering.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_flow_steering.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/ias_rp.o",
-            "iokernel/ias_rp.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_buddy.c.o",
+            "../providers/mlx5/dr_buddy.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias_rp.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_buddy.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/main.o",
-            "iokernel/main.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/main.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "tests/test_many_threads.o",
-            "tests/test_many_threads.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/verbs.c.o",
+            "../providers/mlx5/verbs.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_many_threads.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/verbs.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_runtime_smalloc.o",
-            "tests/test_runtime_smalloc.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_runtime_smalloc.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/core.o",
-            "runtime/net/core.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_ste_v1.c.o",
+            "../providers/mlx5/dr_ste_v1.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/core.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste_v1.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/storage.o",
-            "runtime/storage.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/storage.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/rcu.o",
-            "runtime/rcu.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_domain.c.o",
+            "../providers/mlx5/dr_domain.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/rcu.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_domain.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/control.o",
-            "iokernel/control.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/control.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/sync.o",
-            "runtime/sync.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_devx.c.o",
+            "../providers/mlx5/dr_devx.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/sync.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_devx.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "net/netdump.o",
-            "net/netdump.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "net/netdump.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "iokernel/dp_clients.o",
-            "iokernel/dp_clients.c"
+            "libibverbs/CMakeFiles/ibverbs-static.dir/all_providers.c.o",
+            "../libibverbs/all_providers.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/dp_clients.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../libibverbs/all_providers.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_base_thread.o",
-            "tests/test_base_thread.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_base_thread.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/smalloc.o",
-            "runtime/smalloc.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_buddy.c.o",
+            "../providers/mlx5/dr_buddy.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/smalloc.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_buddy.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/sync.o",
-            "runtime/sync.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/sync.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "tests/test_kthread_wakeup.o",
-            "tests/test_kthread_wakeup.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/buf.c.o",
+            "../providers/mlx5/buf.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_kthread_wakeup.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/buf.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/init.o",
-            "runtime/init.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/init.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "base/lrpc.o",
-            "base/lrpc.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/srq.c.o",
+            "../providers/mlx5/srq.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/lrpc.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/srq.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/ias_ps.o",
-            "iokernel/ias_ps.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias_ps.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/ias.o",
-            "iokernel/ias.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_send.c.o",
+            "../providers/mlx5/dr_send.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_send.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/kthread.o",
-            "runtime/kthread.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/kthread.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "tests/test_runtime_threads.o",
-            "tests/test_runtime_threads.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/srq.c.o",
+            "../providers/mlx5/srq.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_runtime_threads.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/srq.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/ksched.o",
-            "iokernel/ksched.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ksched.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "base/init.o",
-            "base/init.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/qp.c.o",
+            "../providers/mlx5/qp.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/init.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/qp.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/stat.o",
-            "runtime/stat.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/stat.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/softirq.o",
-            "runtime/softirq.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_ste.c.o",
+            "../providers/mlx5/dr_ste.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/softirq.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/cfg.o",
-            "runtime/cfg.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/cfg.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/ping.o",
-            "runtime/net/ping.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_table.c.o",
+            "../providers/mlx5/dr_table.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/ping.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_table.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/dp_clients.o",
-            "iokernel/dp_clients.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/dp_clients.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/control.o",
-            "iokernel/control.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_ste_v0.c.o",
+            "../providers/mlx5/dr_ste_v0.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/control.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste_v0.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_multiple_runtimes.o",
-            "tests/test_multiple_runtimes.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_multiple_runtimes.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/netlink.o",
-            "iokernel/netlink.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_rule.c.o",
+            "../providers/mlx5/dr_rule.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/netlink.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_rule.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "base/mem.o",
-            "base/mem.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/mem.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "base/bitmap.o",
-            "base/bitmap.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/mlx5.c.o",
+            "../providers/mlx5/mlx5.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/bitmap.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/mlx5.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/net/icmp.o",
-            "runtime/net/icmp.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/icmp.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "tests/test_runtime_mutexes.o",
-            "tests/test_runtime_mutexes.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_devx.c.o",
+            "../providers/mlx5/dr_devx.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_runtime_mutexes.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_devx.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/net/tcp_out.o",
-            "runtime/net/tcp_out.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/tcp_out.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/init.o",
-            "runtime/init.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/buf.c.o",
+            "../providers/mlx5/buf.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/init.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/buf.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "base/list.o",
-            "base/list.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/list.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/numa.o",
-            "iokernel/numa.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dbrec.c.o",
+            "../providers/mlx5/dbrec.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/numa.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dbrec.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "base/lrpc.o",
-            "base/lrpc.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/lrpc.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/arp.o",
-            "runtime/net/arp.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_ste_v1.c.o",
+            "../providers/mlx5/dr_ste_v1.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/arp.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste_v1.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_base_hello.o",
-            "tests/test_base_hello.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_base_hello.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-            "-Idpdk/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "iokernel/rx.o",
-            "iokernel/rx.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_rule.c.o",
+            "../providers/mlx5/dr_rule.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/rx.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_rule.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/stat.o",
-            "iokernel/stat.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/stat.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/transport.o",
-            "runtime/net/transport.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_send.c.o",
+            "../providers/mlx5/dr_send.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/transport.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_send.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_base_lrpc.o",
-            "tests/test_base_lrpc.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_base_lrpc.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "tests/netperf.o",
-            "tests/netperf.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_action.c.o",
+            "../providers/mlx5/dr_action.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/netperf.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_action.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_many_threads.o",
-            "tests/test_many_threads.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_many_threads.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/icmp.o",
-            "runtime/net/icmp.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_domain.c.o",
+            "../providers/mlx5/dr_domain.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/icmp.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_domain.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "base/tcache.o",
-            "base/tcache.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "base/tcache.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/tcp_out.o",
-            "runtime/net/tcp_out.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_dbg.c.o",
+            "../providers/mlx5/dr_dbg.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/tcp_out.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_dbg.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/stack.o",
-            "runtime/stack.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/stack.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "tests/test_base_lrpc.o",
-            "tests/test_base_lrpc.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_dbg.c.o",
+            "../providers/mlx5/dr_dbg.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_base_lrpc.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_dbg.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_kthread_attach.o",
-            "tests/test_kthread_attach.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_kthread_attach.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/preempt.o",
-            "runtime/preempt.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_icm_pool.c.o",
+            "../providers/mlx5/dr_icm_pool.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/preempt.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_icm_pool.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/pressure.o",
-            "runtime/pressure.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/pressure.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "base/log.o",
-            "base/log.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_crc32.c.o",
+            "../providers/mlx5/dr_crc32.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/log.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_crc32.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_runtime_rcu.o",
-            "tests/test_runtime_rcu.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_runtime_rcu.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "iokernel/ksched.o",
-            "iokernel/ksched.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_ste_v0.c.o",
+            "../providers/mlx5/dr_ste_v0.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ksched.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_ste_v0.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/rcu.o",
-            "runtime/rcu.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/rcu.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "tests/test_runtime_rcu.o",
-            "tests/test_runtime_rcu.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dbrec.c.o",
+            "../providers/mlx5/dbrec.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "tests/test_runtime_rcu.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dbrec.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/softirq.o",
-            "runtime/softirq.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/softirq.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/ias_bw.o",
-            "iokernel/ias_bw.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_matcher.c.o",
+            "../providers/mlx5/dr_matcher.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/ias_bw.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_matcher.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/membarrier.o",
-            "runtime/membarrier.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/membarrier.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "runtime/net/directpath/mlx5/mlx5_init.o",
-            "runtime/net/directpath/mlx5/mlx5_init.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/dr_icm_pool.c.o",
+            "../providers/mlx5/dr_icm_pool.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_init.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_icm_pool.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "iokernel/sched.o",
-            "iokernel/sched.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/sched.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-Dmlx5_EXPORTS",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
+            "-fPIC",
             "-o",
-<<<<<<< HEAD
-            "iokernel/sched.o",
-            "iokernel/sched.c"
+            "providers/mlx5/CMakeFiles/mlx5.dir/cq.c.o",
+            "../providers/mlx5/cq.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/sched.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/cq.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/net/directpath/common.o",
-            "runtime/net/directpath/common.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/common.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "base/jenkins_hash.o",
-            "base/jenkins_hash.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_matcher.c.o",
+            "../providers/mlx5/dr_matcher.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "base/jenkins_hash.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_matcher.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/net/directpath/mlx5/mlx5_init.o",
-            "runtime/net/directpath/mlx5/mlx5_init.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/net/directpath/mlx5/mlx5_init.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-            "-Idpdk/build/include",
-=======
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "iokernel/stat.o",
-            "iokernel/stat.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/qp.c.o",
+            "../providers/mlx5/qp.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "iokernel/stat.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/qp.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "tests/test_runtime_mutexes.o",
-            "tests/test_runtime_mutexes.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "tests/test_runtime_mutexes.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "net/mbuf.o",
-            "net/mbuf.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_table.c.o",
+            "../providers/mlx5/dr_table.c"
         ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "net/mbuf.c"
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_table.c"
     },
     {
         "arguments": [
             "cc",
-=======
-            "runtime/ioqueues.o",
-            "runtime/ioqueues.c"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "runtime/ioqueues.c"
-    },
-    {
-        "arguments": [
-            "gcc-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
-            "-g",
+            "-D_STATIC_LIBRARY_BUILD_=1",
+            "-I/home/dengxiangyun/Nuplus/caladan/rdma-core/build/include",
+            "-I/usr/include/libnl3",
             "-Wall",
-            "-D_GNU_SOURCE",
-            "-I./inc",
-            "-I./rdma-core/build/include",
-<<<<<<< HEAD
-=======
-            "-Idpdk/build/include",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "-Wextra",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wmissing-prototypes",
+            "-Wmissing-declarations",
+            "-Wwrite-strings",
+            "-Wformat=2",
+            "-Wcast-function-type",
+            "-Wformat-nonliteral",
+            "-Wdate-time",
+            "-Wnested-externs",
+            "-Wshadow",
+            "-Wstrict-prototypes",
+            "-Wold-style-definition",
+            "-Wredundant-decls",
+            "-O2",
+            "-g",
             "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
+            "-std=gnu11",
             "-o",
-<<<<<<< HEAD
-            "runtime/memcpy.o",
-            "runtime/memcpy.c"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus/caladan",
-        "file": "runtime/memcpy.c"
-=======
-            "iokernel/ias_rp.o",
-            "iokernel/ias_rp.c"
+            "providers/mlx5/CMakeFiles/mlx5-static.dir/dr_crc32.c.o",
+            "../providers/mlx5/dr_crc32.c"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu/caladan",
-        "file": "iokernel/ias_rp.c"
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+        "directory": "/home/dengxiangyun/Nuplus/caladan/rdma-core/build",
+        "file": "../providers/mlx5/dr_crc32.c"
     }
 ]

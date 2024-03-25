@@ -317,6 +317,9 @@ void RPCFlow::ReceiveWorker() {
 
 std::unique_ptr<RPCFlow> RPCFlow::New(unsigned int cpu_affinity,
                                       netaddr raddr) {
+  //std::cout << "DDDDDDDDDDDDDDDDDDDcpu_affinity: " << cpu_affinity << std::endl;
+  //std::cout << "DDDDDDDDDDDDDDDDDDDraddr_ip: " << raddr.ip << std::endl;   //18.18.1.1
+  //std::cout << "DDDDDDDDDDDDDDDDDDDraddr_port: " << raddr.port << std::endl;
   std::unique_ptr<rt::TcpConn> c(
       rt::TcpConn::DialAffinity(cpu_affinity, raddr));
   BUG_ON(!c);
@@ -328,6 +331,10 @@ std::unique_ptr<RPCFlow> RPCFlow::New(unsigned int cpu_affinity,
 
 }  // namespace rpc_internal
 
+/*A runtime (with a laddr) has several RPCClient objs, each of which 
+* corresponds to a remote addr(raddr). And each RPCClient obj has a 
+* member 'flows_', including RPCFlow/tcpcon objs for each kthreads of
+* this runtime, preventing access confliction in rpc. @dxy*/
 std::unique_ptr<RPCClient> RPCClient::Dial(netaddr raddr) {
   std::vector<std::unique_ptr<RPCFlow>> v;
   for (unsigned int i = 0; i < rt::RuntimeMaxCores(); ++i) {

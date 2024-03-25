@@ -6,6 +6,7 @@
 #include <nu/utils/perf.hpp>
 #include <random>
 #include <runtime.h>
+#include <span>
 #include <thrift/protocol/TBinaryProtocol.h>
 #include <thrift/transport/TSocket.h>
 #include <thrift/transport/TTransportUtils.h>
@@ -19,9 +20,17 @@ using namespace apache::thrift::protocol;
 using namespace apache::thrift::transport;
 
 constexpr static uint32_t kNumThreads = 200;
-constexpr static double kTargetMops = 0.1;
-constexpr static double kTotalMops = 1;
+constexpr static double kTargetMops = 2;
+constexpr static double kTotalMops = 10;
 constexpr static uint32_t kNumEntries = 1;
+constexpr static netaddr kClientAddrs[] = {
+    {.ip = MAKE_IP_ADDR(18, 18, 1, 249), .port = 9000},
+    {.ip = MAKE_IP_ADDR(18, 18, 1, 250), .port = 9000},
+    {.ip = MAKE_IP_ADDR(18, 18, 1, 251), .port = 9000},
+    {.ip = MAKE_IP_ADDR(18, 18, 1, 252), .port = 9000},
+    {.ip = MAKE_IP_ADDR(18, 18, 1, 253), .port = 9000},
+};
+
 constexpr static uint32_t kEntryPort = 9091;
 constexpr static uint32_t kUserTimelinePercent = 60;
 constexpr static uint32_t kHomeTimelinePercent = 30;
@@ -272,8 +281,9 @@ void do_work() {
   nu::Perf perf(social_network_adapter);
   auto duration_us = kTotalMops / kTargetMops * 1000 * 1000;
   auto warmup_us = duration_us;
-  perf.run(kNumThreads, kTargetMops, duration_us, warmup_us,
-           50 * nu::kOneMilliSecond);
+  perf.run_multi_clients(std::span(kClientAddrs), kNumThreads,
+                         kTargetMops / std::size(kClientAddrs), duration_us,
+                         warmup_us, 10 * nu::kOneMilliSecond);
   std::cout << "real_mops, avg_lat, 50th_lat, 90th_lat, 95th_lat, 99th_lat, "
                "99.9th_lat"
             << std::endl;

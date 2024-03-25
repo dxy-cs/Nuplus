@@ -19,33 +19,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "bench/bench_real_mem_pressure.o",
-            "bench/bench_real_mem_pressure.cpp"
+            "bench/bench_rpc_tput.o",
+            "bench/bench_rpc_tput.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_real_mem_pressure.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_rpc_tput.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_cereal.o",
-            "test/test_cereal.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_cereal.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -63,33 +48,76 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/rpc_client_mgr.o",
-            "src/rpc_client_mgr.cpp"
+            "src/utils/rpc.o",
+            "src/utils/rpc.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/rpc_client_mgr.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/rpc.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_slow_path.o",
+            "test/test_slow_path.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_slow_path.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "src/proclet_server.o",
             "src/proclet_server.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "src/proclet_server.cpp"
     },
     {
         "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "c++",
             "-c",
             "-std=gnu++23",
             "-g",
@@ -107,297 +135,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_migrate.o",
-            "test/test_migrate.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_migrate.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/trace_logger.o",
-            "src/utils/trace_logger.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/trace_logger.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/rpc_server.o",
-            "src/rpc_server.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/rpc_server.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_nested_proclet.o",
-            "test/test_nested_proclet.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_nested_proclet.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/time.o",
-            "src/utils/time.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/time.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_proclet_call_tput.o",
-            "bench/bench_proclet_call_tput.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_proclet_call_tput.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_proclet_call_tput.o",
-            "bench/bench_proclet_call_tput.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_proclet_call_tput.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_rpc_tput.o",
-            "bench/bench_rpc_tput.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_rpc_tput.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_fake_migration.o",
-            "bench/bench_fake_migration.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_fake_migration.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/cond_var.o",
-            "src/utils/cond_var.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/cond_var.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_proclet_call_bw.o",
-            "bench/bench_proclet_call_bw.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_proclet_call_bw.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/pressure_handler.o",
-            "src/pressure_handler.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/pressure_handler.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_shared_ptr.o",
-            "test/test_rem_shared_ptr.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_rem_shared_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "src/ctrl_server.o",
             "src/ctrl_server.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "src/ctrl_server.cpp"
     },
     {
         "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "c++",
             "-c",
             "-std=gnu++23",
             "-g",
@@ -415,1221 +164,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_dis_mem_pool.o",
-            "test/test_dis_mem_pool.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_dis_mem_pool.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_tcp_poll.o",
-            "test/test_tcp_poll.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_tcp_poll.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/common.o",
-            "src/common.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/common.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_lock.o",
-            "test/test_lock.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_lock.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/rcu_lock.o",
-            "src/utils/rcu_lock.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/rcu_lock.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_thread.o",
-            "bench/bench_thread.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_thread.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/cond_var.o",
-            "src/utils/cond_var.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/cond_var.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_cpu_overloaded.o",
-            "bench/bench_cpu_overloaded.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_cpu_overloaded.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_controller.o",
-            "bench/bench_controller.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_controller.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_fake_migration.o",
-            "bench/bench_fake_migration.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_fake_migration.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/pressure_handler.o",
-            "src/pressure_handler.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/pressure_handler.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl_client.o",
-            "src/ctrl_client.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/ctrl_client.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/read_skewed_lock.o",
-            "src/utils/read_skewed_lock.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/read_skewed_lock.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/zipf.o",
-            "src/utils/zipf.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/zipf.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/md5.o",
-            "src/utils/md5.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/md5.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_shared_ptr.o",
-            "test/test_rem_shared_ptr.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_rem_shared_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_nested_proclet.o",
-            "test/test_nested_proclet.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_nested_proclet.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_continuous_migrate.o",
-            "test/test_continuous_migrate.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_continuous_migrate.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/stack_manager.o",
-            "src/stack_manager.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/stack_manager.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/rcu_lock.o",
-            "src/utils/rcu_lock.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/rcu_lock.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/runtime.o",
-            "src/runtime.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/runtime.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/cpu_load.o",
-            "src/utils/cpu_load.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/cpu_load.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_real_cpu_pressure.o",
-            "bench/bench_real_cpu_pressure.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_real_cpu_pressure.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_sync_hash_map.o",
-            "test/test_sync_hash_map.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_sync_hash_map.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_condvar.o",
-            "test/test_condvar.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_condvar.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_migrate.o",
-            "bench/bench_migrate.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_migrate.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/slab.o",
-            "src/utils/slab.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/slab.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/proclet_mgr.o",
-            "src/proclet_mgr.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/proclet_mgr.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/mutex.o",
-            "src/utils/mutex.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/mutex.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl.o",
-            "src/ctrl.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/ctrl.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/cpu_load.o",
-            "src/utils/cpu_load.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/cpu_load.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/perf.o",
-            "src/utils/perf.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/perf.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl_client.o",
-            "src/ctrl_client.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/ctrl_client.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_fragmentation.o",
-            "bench/bench_fragmentation.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_fragmentation.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_hashtable_timeseries.o",
-            "bench/bench_hashtable_timeseries.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_hashtable_timeseries.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_dis_mem_pool.o",
-            "test/test_dis_mem_pool.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_dis_mem_pool.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/thread.o",
-            "src/utils/thread.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/thread.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_hashtable_timeseries.o",
-            "bench/bench_hashtable_timeseries.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_hashtable_timeseries.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_sync_hash_map.o",
-            "test/test_sync_hash_map.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_sync_hash_map.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_condvar.o",
-            "test/test_condvar.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_condvar.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl_main.o",
-            "src/ctrl_main.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/ctrl_main.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/stack_manager.o",
-            "src/stack_manager.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/stack_manager.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_migrate.o",
-            "bench/bench_migrate.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_migrate.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_cpu_load.o",
-            "test/test_cpu_load.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_cpu_load.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/proclet_mgr.o",
-            "src/proclet_mgr.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/proclet_mgr.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_raw_ptr.o",
-            "test/test_rem_raw_ptr.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_rem_raw_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_rpc_tput.o",
-            "bench/bench_rpc_tput.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_rpc_tput.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_pass_proclet.o",
-            "test/test_pass_proclet.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_pass_proclet.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_slab.o",
-            "test/test_slab.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_slab.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/slab.o",
-            "src/utils/slab.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/slab.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_time.o",
-            "test/test_time.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_time.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/farmhash.o",
-            "src/utils/farmhash.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/farmhash.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_unique_ptr.o",
-            "test/test_rem_unique_ptr.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_rem_unique_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "src/dis_mem_pool.o",
             "src/dis_mem_pool.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "src/dis_mem_pool.cpp"
     },
     {
         "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_dis_hash_table.o",
-            "test/test_dis_hash_table.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_dis_hash_table.cpp"
-    },
-    {
-        "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_slab.o",
-            "test/test_slab.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_slab.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -1647,206 +193,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/trace_logger.o",
-            "src/utils/trace_logger.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/trace_logger.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_real_mem_pressure.o",
-            "bench/bench_real_mem_pressure.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_real_mem_pressure.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_proclet.o",
-            "test/test_proclet.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_proclet.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/migrator.o",
-            "src/migrator.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/migrator.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_raw_ptr.o",
-            "test/test_rem_raw_ptr.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_rem_raw_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_dis_hash_table.o",
-            "test/test_dis_hash_table.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_dis_hash_table.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_max_num_proclets.o",
-            "test/test_max_num_proclets.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_max_num_proclets.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_proclet_call_bw.o",
-            "bench/bench_proclet_call_bw.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_proclet_call_bw.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-=======
-            "-DNCORES=48",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-ftemplate-backtrace-limit=0",
             "-o",
             "src/command_line.o",
             "src/command_line.cpp"
         ],
-<<<<<<< HEAD
-        "directory": "/home/wangyuzheng/Nuplus",
-=======
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "src/command_line.cpp"
     },
     {
         "arguments": [
-<<<<<<< HEAD
             "c++",
-=======
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -1864,33 +222,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "test/test_fast_path.o",
-            "test/test_fast_path.cpp"
+            "test/test_sync_hash_map.o",
+            "test/test_sync_hash_map.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_fast_path.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_sync_hash_map.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_proclet_call_lat.o",
-            "bench/bench_proclet_call_lat.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_proclet_call_lat.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -1908,77 +251,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/dis_mem_pool.o",
-            "src/dis_mem_pool.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/dis_mem_pool.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_max_num_proclets.o",
-            "test/test_max_num_proclets.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_max_num_proclets.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "bench/bench_cpu_overloaded.o",
             "bench/bench_cpu_overloaded.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "bench/bench_cpu_overloaded.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_time.o",
-            "test/test_time.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_time.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -1996,33 +280,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/resource_reporter.o",
-            "src/resource_reporter.cpp"
+            "test/test_max_num_proclets.o",
+            "test/test_max_num_proclets.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/resource_reporter.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_max_num_proclets.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/rpc_client_mgr.o",
-            "src/rpc_client_mgr.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/rpc_client_mgr.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2040,33 +309,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/utils/zipf.o",
-            "src/utils/zipf.cpp"
+            "test/test_dis_mem_pool.o",
+            "test/test_dis_mem_pool.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/zipf.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_dis_mem_pool.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/time.o",
-            "src/utils/time.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/time.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2084,33 +338,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "test/test_lock.o",
-            "test/test_lock.cpp"
+            "src/utils/trace_logger.o",
+            "src/utils/trace_logger.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_lock.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/trace_logger.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_real_cpu_pressure.o",
-            "bench/bench_real_cpu_pressure.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_real_cpu_pressure.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2128,473 +367,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl_server.o",
-            "src/ctrl_server.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/ctrl_server.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/thread.o",
-            "src/utils/thread.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/thread.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_perf.o",
-            "test/test_perf.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_perf.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/mutex.o",
-            "src/utils/mutex.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/mutex.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_fragmentation.o",
-            "bench/bench_fragmentation.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_fragmentation.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_migrate.o",
-            "test/test_migrate.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_migrate.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/perf.o",
-            "src/utils/perf.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/perf.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/md5.o",
-            "src/utils/md5.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/md5.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/proclet_server.o",
-            "src/proclet_server.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/proclet_server.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_proclet.o",
-            "test/test_proclet.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_proclet.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/farmhash.o",
-            "src/utils/farmhash.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/farmhash.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/common.o",
-            "src/common.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/common.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_slow_path.o",
-            "test/test_slow_path.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_slow_path.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "bench/bench_controller.o",
-            "bench/bench_controller.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "bench/bench_controller.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_cereal.o",
-            "test/test_cereal.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_cereal.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/mem_hook.o",
-            "src/mem_hook.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/mem_hook.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/mem_hook.o",
-            "src/mem_hook.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/mem_hook.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/runtime.o",
-            "src/runtime.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/runtime.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
-            "-DNCORES=96",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/ctrl.o",
-            "src/ctrl.cpp"
-        ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/ctrl.cpp"
-    },
-    {
-        "arguments": [
-            "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_fast_path.o",
-            "test/test_fast_path.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_fast_path.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
-            "-c",
-            "-std=gnu++23",
-            "-g",
-            "-Wall",
-            "-D_GNU_SOURCE",
-            "-Icaladan/inc",
-            "-Icaladan/rdma-core/build/include",
-            "-Iinc",
-            "-Icaladan/bindings/cc",
-            "-Icaladan/ksched",
-            "-I/usr/include/libnl3/",
-            "-DNDEBUG",
-            "-march=native",
-            "-ffast-math",
-            "-flto=auto",
-            "-DMLX5",
-            "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "test/test_pass_proclet.o",
             "test/test_pass_proclet.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "test/test_pass_proclet.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_rem_unique_ptr.o",
-            "test/test_rem_unique_ptr.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_rem_unique_ptr.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2612,33 +396,134 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "bench/bench_proclet_call_lat.o",
-            "bench/bench_proclet_call_lat.cpp"
+            "test/test_cereal.o",
+            "test/test_cereal.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_proclet_call_lat.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_cereal.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_lock.o",
+            "test/test_lock.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_lock.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_rem_raw_ptr.o",
+            "test/test_rem_raw_ptr.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_rem_raw_ptr.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/rcu_lock.o",
+            "src/utils/rcu_lock.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/rcu_lock.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "src/ctrl_main.o",
             "src/ctrl_main.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "src/ctrl_main.cpp"
     },
     {
         "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "c++",
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2656,33 +541,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/utils/rpc.o",
-            "src/utils/rpc.cpp"
+            "bench/bench_migrate.o",
+            "bench/bench_migrate.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/utils/rpc.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_migrate.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/resource_reporter.o",
-            "src/resource_reporter.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/resource_reporter.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2700,33 +570,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "bench/bench_thread.o",
-            "bench/bench_thread.cpp"
+            "bench/bench_hashtable_timeseries.o",
+            "bench/bench_hashtable_timeseries.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "bench/bench_thread.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_hashtable_timeseries.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_perf.o",
-            "test/test_perf.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_perf.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2744,33 +599,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "test/test_thread.o",
-            "test/test_thread.cpp"
+            "src/common.o",
+            "src/common.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_thread.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/common.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "test/test_slow_path.o",
-            "test/test_slow_path.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "test/test_slow_path.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2788,33 +628,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/migrator.o",
-            "src/migrator.cpp"
+            "test/test_migrate.o",
+            "test/test_migrate.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "src/migrator.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_migrate.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/utils/rpc.o",
-            "src/utils/rpc.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/rpc.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2832,33 +657,511 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/cpu_load.o",
+            "src/utils/cpu_load.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/cpu_load.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_proclet_call_tput.o",
+            "bench/bench_proclet_call_tput.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_proclet_call_tput.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/rpc_server.o",
+            "src/rpc_server.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/rpc_server.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_time.o",
+            "test/test_time.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_time.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "test/test_cpu_load.o",
             "test/test_cpu_load.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "test/test_cpu_load.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/perf.o",
+            "src/utils/perf.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/perf.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/stack_manager.o",
+            "src/stack_manager.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/stack_manager.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/migrator.o",
+            "src/migrator.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/migrator.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/cond_var.o",
+            "src/utils/cond_var.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/cond_var.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_nested_proclet.o",
+            "test/test_nested_proclet.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_nested_proclet.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_proclet.o",
+            "test/test_proclet.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_proclet.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/proclet_mgr.o",
+            "src/proclet_mgr.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/proclet_mgr.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_condvar.o",
+            "test/test_condvar.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_condvar.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/read_skewed_lock.o",
+            "src/utils/read_skewed_lock.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/read_skewed_lock.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_slab.o",
+            "test/test_slab.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_slab.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_real_cpu_pressure.o",
+            "bench/bench_real_cpu_pressure.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_real_cpu_pressure.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/rpc_client_mgr.o",
+            "src/rpc_client_mgr.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/rpc_client_mgr.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "test/test_thread.o",
             "test/test_thread.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "test/test_thread.cpp"
     },
     {
         "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+            "c++",
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2876,33 +1179,18 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "test/test_continuous_migrate.o",
-            "test/test_continuous_migrate.cpp"
+            "src/utils/zipf.o",
+            "src/utils/zipf.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
-        "file": "test/test_continuous_migrate.cpp"
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/zipf.cpp"
     },
     {
         "arguments": [
             "c++",
-=======
-            "-DNCORES=48",
-            "-ftemplate-backtrace-limit=0",
-            "-o",
-            "src/rpc_server.o",
-            "src/rpc_server.cpp"
-        ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/rpc_server.cpp"
-    },
-    {
-        "arguments": [
-            "g++-13",
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
             "-c",
             "-std=gnu++23",
             "-g",
@@ -2920,24 +1208,738 @@
             "-flto=auto",
             "-DMLX5",
             "-DDIRECTPATH",
-<<<<<<< HEAD
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_controller.o",
+            "bench/bench_controller.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_controller.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_dis_hash_table.o",
+            "test/test_dis_hash_table.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_dis_hash_table.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/slab.o",
+            "src/utils/slab.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/slab.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_rem_unique_ptr.o",
+            "test/test_rem_unique_ptr.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_rem_unique_ptr.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/time.o",
+            "src/utils/time.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/time.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
             "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
             "test/test_tcp_poll.o",
             "test/test_tcp_poll.cpp"
         ],
-        "directory": "/home/wangyuzheng/Nuplus",
+        "directory": "/home/dengxiangyun/Nuplus",
         "file": "test/test_tcp_poll.cpp"
-=======
-            "-DNCORES=48",
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
             "-ftemplate-backtrace-limit=0",
             "-o",
-            "src/utils/read_skewed_lock.o",
-            "src/utils/read_skewed_lock.cpp"
+            "src/pressure_handler.o",
+            "src/pressure_handler.cpp"
         ],
-        "directory": "/proj/aifm-evaluation-PG0/Nu",
-        "file": "src/utils/read_skewed_lock.cpp"
->>>>>>> 85daf03b94ed533711deb656fd4468f7771d26c8
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/pressure_handler.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_proclet_call_lat.o",
+            "bench/bench_proclet_call_lat.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_proclet_call_lat.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_fast_path.o",
+            "test/test_fast_path.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_fast_path.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/resource_reporter.o",
+            "src/resource_reporter.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/resource_reporter.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_fragmentation.o",
+            "bench/bench_fragmentation.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_fragmentation.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/farmhash.o",
+            "src/utils/farmhash.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/farmhash.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/mem_hook.o",
+            "src/mem_hook.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/mem_hook.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_thread.o",
+            "bench/bench_thread.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_thread.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_rem_shared_ptr.o",
+            "test/test_rem_shared_ptr.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_rem_shared_ptr.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/thread.o",
+            "src/utils/thread.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/thread.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/ctrl.o",
+            "src/ctrl.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/ctrl.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/mutex.o",
+            "src/utils/mutex.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/mutex.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/runtime.o",
+            "src/runtime.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/runtime.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/utils/md5.o",
+            "src/utils/md5.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/utils/md5.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_continuous_migrate.o",
+            "test/test_continuous_migrate.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_continuous_migrate.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "src/ctrl_client.o",
+            "src/ctrl_client.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "src/ctrl_client.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_real_mem_pressure.o",
+            "bench/bench_real_mem_pressure.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_real_mem_pressure.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "test/test_perf.o",
+            "test/test_perf.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "test/test_perf.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_fake_migration.o",
+            "bench/bench_fake_migration.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_fake_migration.cpp"
+    },
+    {
+        "arguments": [
+            "c++",
+            "-c",
+            "-std=gnu++23",
+            "-g",
+            "-Wall",
+            "-D_GNU_SOURCE",
+            "-Icaladan/inc",
+            "-Icaladan/rdma-core/build/include",
+            "-Iinc",
+            "-Icaladan/bindings/cc",
+            "-Icaladan/ksched",
+            "-I/usr/include/libnl3/",
+            "-DNDEBUG",
+            "-march=native",
+            "-ffast-math",
+            "-flto=auto",
+            "-DMLX5",
+            "-DDIRECTPATH",
+            "-DNCORES=96",
+            "-ftemplate-backtrace-limit=0",
+            "-o",
+            "bench/bench_proclet_call_bw.o",
+            "bench/bench_proclet_call_bw.cpp"
+        ],
+        "directory": "/home/dengxiangyun/Nuplus",
+        "file": "bench/bench_proclet_call_bw.cpp"
     }
 ]

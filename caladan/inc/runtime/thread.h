@@ -143,6 +143,7 @@ static inline void *thread_unset_owner_proclet(thread_t *th,
 static inline void *thread_set_owner_proclet(thread_t *th, void *owner_proclet,
                                              bool update_monitor)
 {
+	//thread_owner_proclet_offset: the offset of proclet_id in the thread struct@dxy
 	void **owner_proclet_p =
 		(void **)((uint64_t)th + thread_owner_proclet_offset);
 	void *old_owner_proclet = *owner_proclet_p;

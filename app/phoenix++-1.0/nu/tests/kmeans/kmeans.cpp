@@ -35,8 +35,20 @@
 #include <sys/stat.h>
 #include <vector>
 
+/*dxy++*/
+#include <atomic>
+#include <thread>
+#include <chrono>
+
 #include "map_reduce.h"
 
+/*dxy++*/
+extern std::atomic_uint64_t nu_call_count;
+extern std::atomic_uint64_t nu_call_lc;
+extern std::atomic_uint64_t nu_call_rt;
+extern std::atomic_uint64_t nu_call_rt_cachemiss;
+extern std::atomic_uint64_t nu_commu_time;
+ 
 using Data_t = int64_t;
 
 // Number of vectors
@@ -48,8 +60,11 @@ constexpr int kNumMeans = 1000;
 // Size of each dimension of vector space
 constexpr Data_t kGridSize = 8ULL << 32;
 constexpr bool kDumpResult = false;
-constexpr int kNumWorkerThreads = 1;
-constexpr int kChunkSize = 6;
+constexpr int kChunkSize = 32;
+
+constexpr int kNumWorkerNodes = 4;
+constexpr int kNumThreadsPerWorker = 5;
+constexpr int kNumWorkerThreads = kNumWorkerNodes * kNumThreadsPerWorker;
 
 struct point {
   Data_t d[kDim];
@@ -152,6 +167,24 @@ void real_main(int argc, char **argv) {
 
   printf("KMeans: Calling MapReduce Scheduler\n");
 
+  //std::thread([] {
+  //  while (true) {
+  //    enum {
+  //      kPrintInterval = 5,
+  //    };
+  //    uint64_t cur_call_count = nu_call_count.load();
+  //    uint64_t cur_call_lc = nu_call_lc.load();
+  //    uint64_t cur_call_rt = nu_call_rt.load();
+  //    uint64_t cur_rt_cachemiss = nu_call_rt_cachemiss.load();
+  //    std::this_thread::sleep_for(std::chrono::seconds(kPrintInterval));
+  //    std::cout << std::endl;
+  //    std::cout << "call_local: " << cur_call_lc << "(" << 1.0 * cur_call_lc / cur_call_count << ")" << std::endl;
+  //    std::cout << "call_remote: " << cur_call_rt << "(" << 1.0 * cur_call_rt / cur_call_count << ")" << std::endl;
+  //    std::cout << "call_cache_miss: " << cur_rt_cachemiss << "(" << 1.0 * cur_rt_cachemiss / cur_call_rt << ")" << std::endl;
+  //    std::cout << std::endl;
+  //  }
+  //}).detach();
+
   KmeansMR mapReduce(kNumWorkerThreads);
 
   std::vector<task_id> tasks;
@@ -163,6 +196,12 @@ void real_main(int argc, char **argv) {
   int iter = 0;
   do {
     std::cout << "iter = " << iter++ << std::endl;
+    /*dxy++*/
+    nu_call_count = 0;
+    nu_call_lc = 0;
+    nu_call_rt = 0;
+    nu_call_rt_cachemiss = 0;
+    nu_commu_time = 0;
 
     auto t0 = microtime();
 
@@ -190,7 +229,11 @@ void real_main(int argc, char **argv) {
     }
 
     auto t3 = microtime();
-    std::cout << t1 - t0 << " " << t2 - t1 << " " << t3 - t2 << std::endl;
+    /*dxy++*/
+    std::cout << "call_count: " << nu_call_count << std::endl;
+    std::cout << "1_time: " << t1 - t0 << " " << "2_time: " << t2 - t1 << " " << "3_time: " << t3 - t2 << std::endl;
+    std::cout << "commu_ratio: " << 1.0 * nu_commu_time / (t3 - t0) << std::endl;
+    
   } while (modified);
 
   printf("KMeans: MapReduce Completed\n");
@@ -203,6 +246,7 @@ void real_main(int argc, char **argv) {
 }
 
 int main(int argc, char **argv) {
+  // srand(0): the generated 'points' sequence will be the same for each execution.@dxy
   srand(0);
   for (int i = 0; i < kNumPoints; i++) {
     points.emplace_back();

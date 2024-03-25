@@ -1,4 +1,15 @@
+/*dxy++*/
+#include <x86intrin.h>
+#include <atomic>
+
 #include "nu/commons.hpp"
+
+/*dxy++*/
+//inline uint64_t rdtsc1() {
+//  unsigned int _;
+//  return __rdtscp(&_);
+//}
+static std::atomic_uint64_t nu_get_shard_id_time = 0;
 
 namespace nu {
 
@@ -85,6 +96,42 @@ DistributedHashTable<K, V, Hash, KeyEqual, NumBuckets>::get(K1 &&k) {
   return shard.__run(&HashTableShard::template get_copy_with_hash<K>,
                      std::forward<K1>(k), key_hash);
 }
+
+/*dxy++*/
+template <typename K, typename V, typename Hash, typename KeyEqual,
+          uint64_t NumBuckets>
+template <typename K1>
+inline std::optional<V>
+DistributedHashTable<K, V, Hash, KeyEqual, NumBuckets>::get_with_profile2(K1 &&k,
+                                                            bool *is_local) {
+  auto hash = Hash();
+  auto key_hash = hash(std::forward<K1>(k));
+  auto shard_idx = get_shard_idx(key_hash);
+  auto &shard = shards_[shard_idx];
+  *is_local = shard.is_local();
+  return shard.__run_with_profile2(&HashTableShard::template get_copy_with_hash<K>,
+                     std::forward<K1>(k), key_hash);
+}
+
+//extern std::atomic_uint64_t nu_get_shard_id_time;
+template <typename K, typename V, typename Hash, typename KeyEqual,
+          uint64_t NumBuckets>
+template <typename K1>
+inline std::optional<V>
+DistributedHashTable<K, V, Hash, KeyEqual, NumBuckets>::get_with_profile(K1 &&k,
+                                                            bool *is_local) {
+  auto hash = Hash();
+  uint64_t s1 = rdtsc1();
+  auto key_hash = hash(std::forward<K1>(k));
+  auto shard_idx = get_shard_idx(key_hash);
+  auto &shard = shards_[shard_idx];
+  *is_local = shard.is_local();
+  uint64_t e1 = rdtsc1();
+  nu_get_shard_id_time += (e1 - s1);
+  return shard.__run_with_profile(&HashTableShard::template get_copy_with_hash<K>,
+                     std::forward<K1>(k), key_hash);
+}
+
 
 template <typename K, typename V, typename Hash, typename KeyEqual,
           uint64_t NumBuckets>

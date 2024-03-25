@@ -174,6 +174,9 @@ class MigrationGuard {
   ProcletHeader *header() const;
   template <typename F>
   auto enable_for(F &&f);
+  /*dxy++*/
+  template <typename F>
+  auto enable_for_profile(F &&f);
   void reset();
   void release();
 

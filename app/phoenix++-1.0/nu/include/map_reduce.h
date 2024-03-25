@@ -104,6 +104,7 @@ protected:
 public:
   MapReduce() {}
 
+  // Init KMeansMR@dxy
   MapReduce(uint64_t num_worker_threads) {
     auto ht = nu::make_dis_hash_table<
         K, typename Combiner<V, std::allocator>::combined, Hash,
@@ -111,6 +112,7 @@ public:
         nu::bsr_64(num_worker_threads - 1) + 1);
     for (uint64_t i = 0; i < num_worker_threads; i++) {
       worker_threads.emplace_back(nu::make_proclet<Impl>());
+      // Call proclet when initing. @dxy
       worker_threads.back().run(
           +[](Impl &impl, HashTable hash_table) {
             impl.init(std::move(hash_table));

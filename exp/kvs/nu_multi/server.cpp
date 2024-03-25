@@ -10,6 +10,11 @@
 #include <utility>
 #include <vector>
 
+/*dxy++*/
+#include <atomic>
+#include <thread>
+#include <chrono>
+
 #include <runtime.h>
 
 #include "nu/dis_hash_table.hpp"
@@ -18,10 +23,18 @@
 #include "nu/utils/farmhash.hpp"
 #include "nu/utils/thread.hpp"
 
+/*dxy++*/
+static std::atomic_uint64_t count = 0;
+static std::atomic_uint64_t sum_time = 0; 
+extern std::atomic_uint64_t nu_call_count;
+extern std::atomic_uint64_t nu_call_lc;
+extern std::atomic_uint64_t nu_call_rt;
+extern std::atomic_uint64_t nu_call_rt_cachemiss;
+
 constexpr uint32_t kKeyLen = 20;
 constexpr uint32_t kValLen = 2;
 constexpr double kLoadFactor = 0.30;
-constexpr uint32_t kNumProxies = 1;
+constexpr uint32_t kNumProxies = 8;
 constexpr uint32_t kProxyPort = 10086;
 
 struct Key {
@@ -113,8 +126,20 @@ class Proxy {
       Req req;
       BUG_ON(c->ReadFull(&req, sizeof(req)) <= 0);
       Resp resp;
+      //if (req.end_of_req) [[unlikely]] {
+      //  std::cout << "count:" << count << std::endl;
+      //  std::cout << "sum_time: " << sum_time / 3300 << std::endl;  // us
+      //  BUG_ON(c->WriteFull(&resp, sizeof(resp)) < 0);
+      //  break;
+      //}
       bool is_local;
-      auto optional_v = hash_table_.get(req.key, &is_local);
+      /*dxy++*/
+      uint64_t s1 = rdtsc1();
+      auto optional_v = hash_table_.get_with_profile2(req.key, &is_local);
+      uint64_t e1 = rdtsc1();
+      sum_time += (e1 - s1);
+      count ++;
+
       resp.found = optional_v.has_value();
       if (resp.found) {
         resp.val = *optional_v;
@@ -138,6 +163,34 @@ void do_work() {
   DSHashTable hash_table =
       nu::make_dis_hash_table<Key, Val, decltype(kFarmHashKeytoU64)>();
   init(&hash_table);
+
+  /*dxy++*/
+  std::thread([] {
+    uint64_t tag = 0;
+    while (true) {
+      enum {
+        kPrintThreshold = 100,
+        kPrintInterval = 1,
+      };
+      uint64_t cur_count = count.load();
+      uint64_t cur_time = sum_time.load();
+      uint64_t cur_call_count = nu_call_count.load();
+      uint64_t cur_call_lc = nu_call_lc.load();
+      uint64_t cur_call_rt = nu_call_rt.load();
+      uint64_t cur_rt_cachemiss = nu_call_rt_cachemiss.load();
+      if ((cur_count - tag) >= kPrintThreshold) {
+        tag = cur_count;
+        std::cout << "count:" << cur_count << std::endl;
+        std::cout << "sum_time: " << 1.0 * cur_time / 3300 << std::endl;  // us
+        std::cout << "us/req: " << (1.0 * cur_time / 3300) / count << std::endl;
+        std::cout << "call_local: " << cur_call_lc << "(" << 1.0 * cur_call_lc / cur_call_count << ")" << std::endl;
+        std::cout << "call_remote: " << cur_call_rt << "(" << 1.0 * cur_call_rt / cur_call_count << ")" << std::endl;
+        std::cout << "call_cache_miss: " << cur_rt_cachemiss << "(" << 1.0 * cur_rt_cachemiss / cur_call_rt << ")" << std::endl;
+      } else {
+        std::this_thread::sleep_for(std::chrono::seconds(kPrintInterval));
+      }
+    }
+  }).detach();
 
   std::vector<nu::Future<void>> futures;
   nu::Proclet<Proxy> proxies[kNumProxies];

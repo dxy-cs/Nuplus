@@ -193,9 +193,13 @@ std::optional<std::pair<ProcletID, NodeIP>> Controller::allocate_proclet(
 
   auto segment = bucket.top();
   bucket.pop();
+  /*Id of proclet is set as the start_addr of its heap.@dxy*/
   auto start_addr = segment.range.start;
   auto id = start_addr;
+  /*Which node/runtime a proclet to be constructed on can be specified, or in a round-robin way.@dxy*/
   auto node_ip = select_node_for_proclet(lpid, ip_hint, segment);
+  //char *construct_dst = new char[15];
+  //std::cout << "construct_dst: " << ip_addr_to_str(node_ip, construct_dst) << std::endl;
   if (unlikely(!node_ip)) {
     return std::nullopt;
   }

@@ -83,9 +83,17 @@ class Proclet {
       std::function<void(int argc, char **argv)> main_func);
 
   std::optional<Future<void>> update_ref_cnt(ProcletID id, int delta);
+  /*dxy++*/
+  template <typename... S1s>
+  static void invoke_remote_with_profile2(MigrationGuard &&caller_guard, ProcletID id,
+                            S1s &&... states);
   template <typename... S1s>
   static void invoke_remote(MigrationGuard &&caller_guard, ProcletID id,
                             S1s &&... states);
+  /*dxy++*/
+  template <typename RetT, typename... S1s>
+  static RetT invoke_remote_with_ret_with_profile2(MigrationGuard &&caller_guard,
+                                     ProcletID id, S1s &&... states);
   template <typename RetT, typename... S1s>
   static RetT invoke_remote_with_ret(MigrationGuard &&caller_guard,
                                      ProcletID id, S1s &&... states);
@@ -95,12 +103,26 @@ class Proclet {
   template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
             typename RetT, typename... S0s, typename... S1s>
   Future<RetT> __run_async(RetT (*fn)(T &, S0s...), S1s &&... states);
+  /*dxy++*/
+  template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
+            typename RetT, typename... S0s, typename... S1s>
+  RetT __run_with_profile2(RetT (*fn)(T &, S0s...), S1s &&... states);
+  template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
+            typename RetT, typename... S0s, typename... S1s>
+  RetT __run_with_profile(RetT (*fn)(T &, S0s...), S1s &&... states);
   template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
             typename RetT, typename... S0s, typename... S1s>
   RetT __run(RetT (*fn)(T &, S0s...), S1s &&... states);
   template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
             typename RetT, typename... A0s, typename... A1s>
   Future<RetT> __run_async(RetT (T::*md)(A0s...), A1s &&... args);
+  /*dxy++*/
+  template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
+            typename RetT, typename... A0s, typename... A1s>
+  RetT __run_with_profile2(RetT (T::*md)(A0s...), A1s &&... args);
+  template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
+            typename RetT, typename... A0s, typename... A1s>
+  RetT __run_with_profile(RetT (T::*md)(A0s...), A1s &&... args);
   template <bool MigrEn = true, bool CPUMon = true, bool CPUSamp = true,
             typename RetT, typename... A0s, typename... A1s>
   RetT __run(RetT (T::*md)(A0s...), A1s &&... args);

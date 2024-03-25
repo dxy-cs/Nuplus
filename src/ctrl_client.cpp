@@ -56,6 +56,7 @@ std::optional<std::pair<ProcletID, NodeIP>> ControllerClient::allocate_proclet(
   req.lpid = lpid_;
   req.ip_hint = ip_hint;
   RPCReturnBuffer return_buf;
+  /*Send to RPCServer (rpc_server.cpp: 49). RPCServer seems to be a part of Runtime.@dxy*/
   BUG_ON(rpc_client_->Call(to_span(req), &return_buf) != kOk);
   auto &resp = from_span<RPCRespAllocateProclet>(return_buf.get_buf());
   if (resp.empty) {

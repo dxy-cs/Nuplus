@@ -6,6 +6,11 @@
 #include <type_traits>
 #include <utility>
 
+/*dxy++*/
+#include <x86intrin.h>
+#include <atomic>
+#include <chrono>
+
 extern "C" {
 #include <base/assert.h>
 #include <runtime/net.h>
@@ -19,6 +24,20 @@ extern "C" {
 #include "nu/rpc_server.hpp"
 #include "nu/runtime.hpp"
 #include "nu/utils/future.hpp"
+
+/*dxy++*/
+//inline uint64_t rdtsc1() {
+//  unsigned int _;
+//  return __rdtscp(&_);
+//}
+static std::atomic_uint64_t nu_caller_migr_guard_time = 0;
+static std::atomic_uint64_t nu_callee_migr_guard_time = 0;
+static std::atomic_uint64_t nu_pass_states_time = 0;
+static std::atomic_uint64_t nu_call_count = 0;
+static std::atomic_uint64_t nu_call_lc = 0;
+static std::atomic_uint64_t nu_call_rt = 0;
+static std::atomic_uint64_t nu_call_rt_cachemiss = 0;
+//static std::atomic_uint64_t nu_commu_time = 0;
 
 namespace nu {
 
@@ -35,6 +54,48 @@ inline void serialize(auto *oa_sstream, S1s &&... states) {
   auto &oa = oa_sstream->oa;
   ((oa << std::forward<S1s>(states)), ...);
 }
+
+/*dxy++*/
+template <typename T>
+template <typename... S1s>
+void Proclet<T>::invoke_remote_with_profile2(MigrationGuard &&caller_guard, ProcletID id,
+                               S1s &&... states) {
+  std::optional<MigrationGuard> optional_caller_guard;
+  RuntimeSlabGuard slab_guard;
+
+  auto *caller_header = get_runtime()->get_current_proclet_header();
+  auto *oa_sstream = get_runtime()->archive_pool()->get_oa_sstream();
+  serialize(oa_sstream, std::forward<S1s>(states)...);
+  get_runtime()->detach();
+  caller_guard.reset();
+
+retry:
+  auto states_view = oa_sstream->ss.view();
+  auto states_data = reinterpret_cast<const std::byte *>(states_view.data());
+  auto states_size = oa_sstream->ss.tellp();
+
+  RPCReturnBuffer return_buf;
+  RPCReturnCode rc;
+  auto args_span = std::span(states_data, states_size);
+
+  auto *client = get_runtime()->rpc_client_mgr()->get_by_proclet_id(id);
+  rc = client->Call(args_span, &return_buf);
+  if (unlikely(rc == kErrWrongClient)) {
+    nu_call_rt_cachemiss ++;
+    get_runtime()->rpc_client_mgr()->invalidate_cache(id, client);
+    goto retry;
+  }
+  assert(rc == kOk);
+  get_runtime()->archive_pool()->put_oa_sstream(oa_sstream);
+
+  optional_caller_guard =
+      get_runtime()->attach_and_disable_migration(caller_header);
+  if (!optional_caller_guard) {
+    Migrator::migrate_thread_and_ret_val<void>(
+        std::move(return_buf), to_proclet_id(caller_header), nullptr, nullptr);
+  }
+}
+
 
 template <typename T>
 template <typename... S1s>
@@ -61,6 +122,8 @@ retry:
   auto *client = get_runtime()->rpc_client_mgr()->get_by_proclet_id(id);
   rc = client->Call(args_span, &return_buf);
   if (unlikely(rc == kErrWrongClient)) {
+    /*dxy+1*/
+    nu_call_rt_cachemiss ++;
     get_runtime()->rpc_client_mgr()->invalidate_cache(id, client);
     goto retry;
   }
@@ -73,6 +136,63 @@ retry:
     Migrator::migrate_thread_and_ret_val<void>(
         std::move(return_buf), to_proclet_id(caller_header), nullptr, nullptr);
   }
+}
+
+/*dxy++*/
+template <typename T>
+template <typename RetT, typename... S1s>
+RetT Proclet<T>::invoke_remote_with_ret_with_profile2(MigrationGuard &&caller_guard,
+                                        ProcletID id, S1s &&... states) {
+  RetT ret;
+  std::optional<MigrationGuard> optional_caller_guard;
+  RuntimeSlabGuard slab_guard;
+
+  auto *caller_header = get_runtime()->get_current_proclet_header();
+  auto *oa_sstream = get_runtime()->archive_pool()->get_oa_sstream();
+  serialize(oa_sstream, std::forward<S1s>(states)...);
+  get_runtime()->detach();
+  caller_guard.reset();
+
+retry:
+  auto states_view = oa_sstream->ss.view();
+  auto states_data = reinterpret_cast<const std::byte *>(states_view.data());
+  auto states_size = oa_sstream->ss.tellp();
+
+  RPCReturnBuffer return_buf;
+  RPCReturnCode rc;
+  auto args_span = std::span(states_data, states_size);
+
+  auto *client = get_runtime()->rpc_client_mgr()->get_by_proclet_id(id);
+  rc = client->Call(args_span, &return_buf);
+  if (unlikely(rc == kErrWrongClient)) {
+    nu_call_rt_cachemiss ++;
+    get_runtime()->rpc_client_mgr()->invalidate_cache(id, client);
+    goto retry;
+  }
+  assert(rc == kOk);
+  get_runtime()->archive_pool()->put_oa_sstream(oa_sstream);
+
+  optional_caller_guard =
+      get_runtime()->attach_and_disable_migration(caller_header);
+  if (!optional_caller_guard) {
+    Migrator::migrate_thread_and_ret_val<RetT>(
+        std::move(return_buf), to_proclet_id(caller_header), &ret, nullptr);
+  } else {
+    auto *ia_sstream = get_runtime()->archive_pool()->get_ia_sstream();
+    auto &[ret_ss, ia] = *ia_sstream;
+    auto return_span = return_buf.get_mut_buf();
+    ret_ss.span(
+        {reinterpret_cast<char *>(return_span.data()), return_span.size()});
+    if (caller_header) {
+      ProcletSlabGuard slab_guard(&caller_header->slab);
+      ia >> ret;
+    } else {
+      ia >> ret;
+    }
+    get_runtime()->archive_pool()->put_ia_sstream(ia_sstream);
+  }
+
+  return ret;
 }
 
 template <typename T>
@@ -101,6 +221,8 @@ retry:
   auto *client = get_runtime()->rpc_client_mgr()->get_by_proclet_id(id);
   rc = client->Call(args_span, &return_buf);
   if (unlikely(rc == kErrWrongClient)) {
+    /*dxy+1*/
+    nu_call_rt_cachemiss ++;
     get_runtime()->rpc_client_mgr()->invalidate_cache(id, client);
     goto retry;
   }
@@ -190,6 +312,7 @@ Proclet<T> Proclet<T>::__create(bool pinned, uint64_t capacity, NodeIP ip_hint,
     MigrationGuard caller_migration_guard;
 
     caller_header = caller_migration_guard.header();
+    /*Struct Thread has an field recording which proclet it belongs to.@dxy*/
     get_runtime()->detach();
   }
 
@@ -197,6 +320,7 @@ Proclet<T> Proclet<T>::__create(bool pinned, uint64_t capacity, NodeIP ip_hint,
   {
     RuntimeSlabGuard slab_guard;
 
+    /*The RPCClient obj, "ControllerClient", corresponds to the remote addr "Controller".@dxy*/
     auto optional =
         get_runtime()->controller_client()->allocate_proclet(capacity, ip_hint);
     if (unlikely(!optional)) {
@@ -206,6 +330,9 @@ Proclet<T> Proclet<T>::__create(bool pinned, uint64_t capacity, NodeIP ip_hint,
     get_runtime()->rpc_client_mgr()->update_cache(callee_id, server_ip);
     callee_proclet.id_ = callee_id;
 
+    /* In the construction of optional_caller_migration_guard, 
+    * the thread comes into the context of callee proclet. Here, 
+    * set heap as the callee's heap.@dxy*/
     optional_caller_migration_guard =
         get_runtime()->attach_and_disable_migration(caller_header);
     if (!optional_caller_migration_guard) {
@@ -282,11 +409,12 @@ inline RetT Proclet<T>::run(
   return __run<MigrEn, CPUMon, CPUSamp>(fn, std::forward<S1s>(states)...);
 }
 
+/*dxy++*/
 template <typename T>
 template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
           typename... S0s, typename... S1s>
-RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
-  auto start_tsc = rdtsc();
+RetT Proclet<T>::__run_with_profile2(RetT (*fn)(T &, S0s...), S1s &&... states) {
+  nu_call_count ++;
   MigrationGuard caller_migration_guard;
 
   auto *caller_header = caller_migration_guard.header();
@@ -295,14 +423,12 @@ RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
     auto optional_callee_migration_guard =
         get_runtime()->reattach_and_disable_migration(callee_header,
                                                       caller_migration_guard);
-    auto end_tsc = rdtsc();
-    std::cout << "simple judge overhead:" << end_tsc-start_tsc << std::endl;
     if (optional_callee_migration_guard) {
+      nu_call_lc ++;
       // Fast path: the callee proclet is actually local, use function call.
 
       constexpr auto kHasRetVal = !std::is_same_v<RetT, void>;
       std::conditional_t<kHasRetVal, RetT, ErasedType> ret;
-      // printf("local fastpath\n");
       {
         ProcletSlabGuard slab_guard(&callee_header->slab);
         using StatesTuple = std::tuple<std::decay_t<S1s>...>;
@@ -336,7 +462,83 @@ RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
       }
     }
   }
-  // printf("remote slowpath\n");
+  // Slow path: the callee proclet is actually remote, use RPC.
+  nu_call_rt ++;
+  auto *handler = ProcletServer::run_closure<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn), S1s...>;
+  if constexpr (!std::is_same<RetT, void>::value) {
+    return invoke_remote_with_ret_with_profile2<RetT>(std::move(caller_migration_guard), id_,
+                                        handler, id_, fn,
+                                        std::forward<S1s>(states)...);
+  } else {
+    invoke_remote_with_profile2(std::move(caller_migration_guard), id_, handler, id_, fn,
+                  std::forward<S1s>(states)...);
+  }
+}
+
+
+/*dxy++*/
+template <typename T>
+template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
+          typename... S0s, typename... S1s>
+RetT Proclet<T>::__run_with_profile(RetT (*fn)(T &, S0s...), S1s &&... states) {
+  uint64_t s2 = rdtsc1();
+  MigrationGuard caller_migration_guard;
+
+  auto *caller_header = caller_migration_guard.header();
+  uint64_t e2 = rdtsc1();
+  nu_caller_migr_guard_time += (e2 - s2);
+  //TODO: caller_header == NULL means what?
+  if (caller_header) {
+    uint64_t s3 = rdtsc1();
+    auto callee_header = to_proclet_header(id_);
+    auto optional_callee_migration_guard =
+        get_runtime()->reattach_and_disable_migration(callee_header,
+                                                      caller_migration_guard);
+    uint64_t e3 = rdtsc1();
+    nu_callee_migr_guard_time += (e3 - s3);
+    if (optional_callee_migration_guard) {
+      // Fast path: the callee proclet is actually local, use function call.
+
+      uint64_t s4 = rdtsc1();
+      constexpr auto kHasRetVal = !std::is_same_v<RetT, void>;
+      std::conditional_t<kHasRetVal, RetT, ErasedType> ret;
+      {
+        ProcletSlabGuard slab_guard(&callee_header->slab);
+        using StatesTuple = std::tuple<std::decay_t<S1s>...>;
+        // Do copy for the most cases and only do move when we are sure it's
+        // safe. For copy, we assume the type implements "deep copy".
+        auto copied_states =
+            reinterpret_cast<StatesTuple *>(alloca(sizeof(StatesTuple)));
+        new (copied_states)
+            StatesTuple(pass_across_proclet(std::forward<S1s>(states))...);
+        caller_migration_guard.reset();
+        uint64_t e4 = rdtsc1();
+        nu_pass_states_time += (e4 - s4);
+
+        if constexpr (kHasRetVal) {
+          ProcletServer::run_closure_locally_with_profile<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn),
+                                             std::decay_t<S1s>...>(
+              &(*optional_callee_migration_guard), slab_guard, &ret,
+              caller_header, callee_header, fn, copied_states);
+        } else {
+          ProcletServer::run_closure_locally_with_profile<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn),
+                                             std::decay_t<S1s>...>(
+              &(*optional_callee_migration_guard), slab_guard, nullptr,
+              caller_header, callee_header, fn, copied_states);
+        }
+      }
+
+      if constexpr (kHasRetVal) {
+        return ret;
+      } else {
+        return;
+      }
+    }
+  }
+  std::cout << "UNEXPECTED!!! Walk on slow path!!!" << std::endl;
   // Slow path: the callee proclet is actually remote, use RPC.
   auto *handler = ProcletServer::run_closure<MigrEn, CPUMon, CPUSamp, T, RetT,
                                              decltype(fn), S1s...>;
@@ -349,6 +551,156 @@ RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
                   std::forward<S1s>(states)...);
   }
 }
+
+
+/* Key run.@dxy*/
+template <typename T>
+template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
+          typename... S0s, typename... S1s>
+RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
+  uint64_t s1, e1;
+  s1 = microtime1();
+  nu_call_count ++;
+  MigrationGuard caller_migration_guard;
+
+  auto *caller_header = caller_migration_guard.header();
+  e1 = microtime1();
+  nu_commu_time += (e1 - s1);
+  if (caller_header) {
+    s1 = microtime1();
+    auto callee_header = to_proclet_header(id_);
+    auto optional_callee_migration_guard =
+        get_runtime()->reattach_and_disable_migration(callee_header,
+                                                      caller_migration_guard);
+    e1 = microtime1();
+    nu_commu_time += (e1 - s1);                                                  
+    if (optional_callee_migration_guard) {
+      nu_call_lc ++;
+      // Fast path: the callee proclet is actually local, use function call.
+
+      constexpr auto kHasRetVal = !std::is_same_v<RetT, void>;
+      std::conditional_t<kHasRetVal, RetT, ErasedType> ret;
+      {
+        s1 = microtime1();
+        ProcletSlabGuard slab_guard(&callee_header->slab);
+        using StatesTuple = std::tuple<std::decay_t<S1s>...>;
+        // Do copy for the most cases and only do move when we are sure it's
+        // safe. For copy, we assume the type implements "deep copy".
+        auto copied_states =
+            reinterpret_cast<StatesTuple *>(alloca(sizeof(StatesTuple)));
+        new (copied_states)
+            StatesTuple(pass_across_proclet(std::forward<S1s>(states))...);
+        caller_migration_guard.reset();
+        e1 = microtime1();
+        nu_commu_time += (e1 - s1);
+
+        if constexpr (kHasRetVal) {
+          ProcletServer::run_closure_locally<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn),
+                                             std::decay_t<S1s>...>(
+              &(*optional_callee_migration_guard), slab_guard, &ret,
+              caller_header, callee_header, fn, copied_states);
+        } else {
+          ProcletServer::run_closure_locally<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn),
+                                             std::decay_t<S1s>...>(
+              &(*optional_callee_migration_guard), slab_guard, nullptr,
+              caller_header, callee_header, fn, copied_states);
+        }
+      }
+
+      if constexpr (kHasRetVal) {
+        return ret;
+      } else {
+        return;
+      }
+    }
+  }
+  // Slow path: the callee proclet is actually remote, use RPC.
+  nu_call_rt ++;
+  //s1 = microtime1();
+  auto *handler = ProcletServer::run_closure<MigrEn, CPUMon, CPUSamp, T, RetT,
+                                             decltype(fn), S1s...>;
+  if constexpr (!std::is_same<RetT, void>::value) {
+    auto ret_ = invoke_remote_with_ret<RetT>(std::move(caller_migration_guard), id_,
+                                        handler, id_, fn,
+                                        std::forward<S1s>(states)...);
+    //e1 = microtime1();
+    //nu_commu_time += (e1 - s1);
+    return ret_;
+  } else {
+    invoke_remote(std::move(caller_migration_guard), id_, handler, id_, fn,
+                  std::forward<S1s>(states)...);
+    //e1 = microtime1();
+    //nu_commu_time += (e1 - s1);
+  }
+}
+
+
+/*dxy: Original version.*/
+//template <typename T>
+//template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
+//          typename... S0s, typename... S1s>
+//RetT Proclet<T>::__run(RetT (*fn)(T &, S0s...), S1s &&... states) {
+//  MigrationGuard caller_migration_guard;
+//
+//  auto *caller_header = caller_migration_guard.header();
+//  if (caller_header) {
+//    auto callee_header = to_proclet_header(id_);
+//    auto optional_callee_migration_guard =
+//        get_runtime()->reattach_and_disable_migration(callee_header,
+//                                                      caller_migration_guard);                 
+//    if (optional_callee_migration_guard) {
+//      // Fast path: the callee proclet is actually local, use function call.
+//
+//      constexpr auto kHasRetVal = !std::is_same_v<RetT, void>;
+//      std::conditional_t<kHasRetVal, RetT, ErasedType> ret;
+//      {
+//        ProcletSlabGuard slab_guard(&callee_header->slab);
+//        using StatesTuple = std::tuple<std::decay_t<S1s>...>;
+//        // Do copy for the most cases and only do move when we are sure it's
+//        // safe. For copy, we assume the type implements "deep copy".
+//        auto copied_states =
+//            reinterpret_cast<StatesTuple *>(alloca(sizeof(StatesTuple)));
+//        new (copied_states)
+//            StatesTuple(pass_across_proclet(std::forward<S1s>(states))...);
+//        caller_migration_guard.reset();
+//
+//        if constexpr (kHasRetVal) {
+//          ProcletServer::run_closure_locally<MigrEn, CPUMon, CPUSamp, T, RetT,
+//                                             decltype(fn),
+//                                             std::decay_t<S1s>...>(
+//              &(*optional_callee_migration_guard), slab_guard, &ret,
+//              caller_header, callee_header, fn, copied_states);
+//        } else {
+//          ProcletServer::run_closure_locally<MigrEn, CPUMon, CPUSamp, T, RetT,
+//                                             decltype(fn),
+//                                             std::decay_t<S1s>...>(
+//              &(*optional_callee_migration_guard), slab_guard, nullptr,
+//              caller_header, callee_header, fn, copied_states);
+//        }
+//      }
+//
+//      if constexpr (kHasRetVal) {
+//        return ret;
+//      } else {
+//        return;
+//      }
+//    }
+//  }
+//  // Slow path: the callee proclet is actually remote, use RPC.
+//  auto *handler = ProcletServer::run_closure<MigrEn, CPUMon, CPUSamp, T, RetT,
+//                                             decltype(fn), S1s...>;
+//  if constexpr (!std::is_same<RetT, void>::value) {
+//    return invoke_remote_with_ret<RetT>(std::move(caller_migration_guard), id_,
+//                                        handler, id_, fn,
+//                                        std::forward<S1s>(states)...);
+//  } else {
+//    invoke_remote(std::move(caller_migration_guard), id_, handler, id_, fn,
+//                  std::forward<S1s>(states)...);
+//  }
+//}
+
 
 template <typename T>
 template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
@@ -382,6 +734,33 @@ inline RetT Proclet<T>::run(
       decltype((std::declval<T>().*(md))(std::forward<A1s>(args)...));
 
   return __run<MigrEn, CPUMon, CPUSamp>(md, std::forward<A1s>(args)...);
+}
+
+/*dxy++*/
+template <typename T>
+template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
+          typename... A0s, typename... A1s>
+inline RetT Proclet<T>::__run_with_profile2(RetT (T::*md)(A0s...), A1s &&... args) {
+  MethodPtr<decltype(md)> method_ptr;
+  method_ptr.ptr = md;
+  return __run_with_profile2<MigrEn, CPUMon, CPUSamp>(
+      +[](T &t, decltype(method_ptr) method_ptr, A0s... args) {
+        return (t.*(method_ptr.ptr))(std::move(args)...);
+      },
+      method_ptr, std::forward<A1s>(args)...);
+}
+
+template <typename T>
+template <bool MigrEn, bool CPUMon, bool CPUSamp, typename RetT,
+          typename... A0s, typename... A1s>
+inline RetT Proclet<T>::__run_with_profile(RetT (T::*md)(A0s...), A1s &&... args) {
+  MethodPtr<decltype(md)> method_ptr;
+  method_ptr.ptr = md;
+  return __run_with_profile<MigrEn, CPUMon, CPUSamp>(
+      +[](T &t, decltype(method_ptr) method_ptr, A0s... args) {
+        return (t.*(method_ptr.ptr))(std::move(args)...);
+      },
+      method_ptr, std::forward<A1s>(args)...);
 }
 
 template <typename T>

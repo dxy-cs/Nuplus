@@ -33,6 +33,11 @@ class DistributedHashTable {
   DistributedHashTable();
   template <typename K1>
   std::optional<V> get(K1 &&k);
+  /*dxy++ : profile1 for kvs/nu, profile2 for kvs/nu_multi*/
+  template <typename K1>
+  std::optional<V> get_with_profile2(K1 &&k, bool *is_local);
+  template <typename K1>
+  std::optional<V> get_with_profile(K1 &&k, bool *is_local);
   template <typename K1>
   std::optional<V> get(K1 &&k, bool *is_local);
   template <typename K1, typename V1>

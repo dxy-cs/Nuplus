@@ -134,6 +134,7 @@ class RPCFlow {
   constexpr static uint64_t kReqBatchSize = 4;
   constexpr static uint64_t kBatchTimeoutUs = 5;
 
+  /*Seems that one TCP connection corresponds to one RPCFlow obj. @dxy*/
   RPCFlow(std::unique_ptr<rt::TcpConn> c)
       : close_(false),
         c_(std::move(c)),

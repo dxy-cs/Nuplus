@@ -27,11 +27,11 @@ constexpr uint32_t kValLen = 2;
 constexpr double kLoadFactor = 0.30;
 constexpr uint32_t kPrintIntervalUS = 1000 * 1000;
 constexpr uint32_t kNumProxies = 1;
-constexpr uint32_t kProxyIps[] = {MAKE_IP_ADDR(18, 18, 1, 3)};
+constexpr uint32_t kProxyIps[] = {MAKE_IP_ADDR(18, 18, 1, 2)};
 constexpr uint32_t kProxyPort = 10086;
 constexpr static netaddr kClientAddrs[] = {
     {.ip = MAKE_IP_ADDR(18, 18, 1, 4), .port = 9000},
-    {.ip = MAKE_IP_ADDR(18, 18, 1, 5), .port = 9000},
+    //{.ip = MAKE_IP_ADDR(18, 18, 1, 5), .port = 9000},
 };
 constexpr uint32_t kNumThreads = 500;
 constexpr double kTargetMops = 1;
@@ -69,6 +69,8 @@ struct Val {
 };
 
 struct Req {
+  /*dxy+1*/
+  bool end_of_req;
   Key key;
   uint32_t shard_id;
 };
@@ -126,6 +128,8 @@ public:
     auto *state = reinterpret_cast<MemcachedPerfThreadState *>(perf_state);
 
     auto perf_req = std::make_unique<PerfReq>();
+    /*dxy+1*/
+    perf_req->req.end_of_req = false;
     random_str(state->dist_char, state->gen, kKeyLen, perf_req->req.key.data);
     perf_req->req.shard_id = DSHashTable::get_shard_idx(
         perf_req->req.key, DSHashTable::kDefaultPowerNumShards);
@@ -155,6 +159,17 @@ void init_tcp() {
   }
 }
 
+/*dxy++*/
+void destroy_tcp() {
+  for (uint32_t i = 0; i < kNumProxies; i++) {
+    static_assert(kNumThreads > 0);
+    Req req { .end_of_req = true };
+    BUG_ON(conns[i][0]->WriteFull(&req, sizeof(req)) < 0);
+    Resp resp;
+    BUG_ON(conns[i][0]->ReadFull(&resp, sizeof(resp)) <= 0);
+  }
+}
+
 void do_work() {
   init_tcp();
 
@@ -163,6 +178,8 @@ void do_work() {
   perf.run_multi_clients(std::span(kClientAddrs), kNumThreads,
                          kTargetMops / std::size(kClientAddrs), kDurationUs,
                          kWarmupUs, 50 * nu::kOneMilliSecond);
+  /*dxy+1*/
+  destroy_tcp();
   std::cout << "real_mops, avg_lat, 50th_lat, 90th_lat, 95th_lat, 99th_lat, "
                "99.9th_lat"
             << std::endl;
